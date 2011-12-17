@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @state.name %>
+</p>
+
+<p>
+  <b>Short:</b>
+  <%= @state.short %>
+</p>
+
+<p>
+  <b>Totalvoters:</b>
+  <%= @state.totalVoters %>
+</p>
+
+<p>
+  <b>Registeredvoters:</b>
+  <%= @state.registeredVoters %>
+</p>
+
+
+<%= link_to 'Edit', edit_state_path(@state) %> |
+<%= link_to 'Back', states_path %>

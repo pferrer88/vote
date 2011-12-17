@@ -1,10 +1,24 @@
 Voto::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  
+  get "contact/index"
+
+  get "information/index"
+
+  get "about/index"
+
+  resources :states
+
+  resources :products
+
   #get \"users\/show\"
 
   root :to => "home#index"
 
   devise_for :users
-  resources :users, :only => :show
+  resources :users, :only => [:show,:update]
 
 
   # The priority is based upon order of creation:

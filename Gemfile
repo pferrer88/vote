@@ -3,11 +3,13 @@ HOST_OS = RbConfig::CONFIG['host_os']
 source 'http://rubygems.org'
 gem 'rails', '3.1.3'
 gem 'sqlite3'
+
 gem 'json'
+
 group :assets do
-  gem 'sass-rails',   '~> 3.1.5'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
+	gem 'sass-rails', '~> 3.1.5'
 end
 gem 'jquery-rails'
 if HOST_OS =~ /linux/i
@@ -20,6 +22,7 @@ gem "capybara", ">= 1.1.2", :group => :test
 gem "database_cleaner", ">= 0.7.0", :group => :test
 gem "launchy", ">= 2.0.5", :group => :test
 gem "guard", ">= 0.6.2", :group => :development
+
 case HOST_OS
   when /darwin/i
     gem 'rb-fsevent', :group => :development
@@ -38,4 +41,8 @@ gem "guard-livereload", ">= 0.3.0", :group => :development
 gem "guard-rspec", ">= 0.4.3", :group => :development
 gem "guard-cucumber", ">= 0.6.1", :group => :development
 gem "devise", ">= 1.5.0"
+gem 'devise_invitable', '~> 0.6.0'
+gem 'best_in_place'
+gem 'activeadmin'
+gem "meta_search",    '>= 1.1.0.pre'
 gem "twitter-bootstrap-rails"

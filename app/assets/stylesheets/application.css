@@ -2,18 +2,115 @@
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
- *= require_self
  *= require twitter/bootstrap
+ *= require_self
  *= require_tree . 
 */
-header nav ul {
+
+
+/* Override some defaults */
+html, body {
+  background-color: #eee;
+}
+body {
+  padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
+}
+.container > footer p {
+  text-align: center; /* center align it with the container */
+}
+.container {
+  width: 820px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
+}
+
+/* The white background content wrapper */
+.container > .content {
+  background-color: #fff;
+  padding: 20px;
+  margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+  -webkit-border-radius: 0 0 6px 6px;
+     -moz-border-radius: 0 0 6px 6px;
+          border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+          box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}
+
+/* Page header tweaks */
+/* @group Logo */
+
+div#MainTitle {
+	float: left;
+}
+
+#logo {
+	padding-left: 54px;
+	background: url(logosmall.png) no-repeat -2px 1px;
+	height: 68px;
+	padding-top: 30px;
+	float: left;
+}
+
+div.page-header h1 small {
+	float: left;
+}
+
+div.page-header h1 {
+	display: inline-block;
+}
+
+
+/* @end */
+.page-header {
+  background-color: #f5f5f5;
+  padding: 20px 20px 10px;
+  margin: -20px -20px 20px;
+	height: 135px;
+}
+
+.topbar div.field_with_errors {
+	display: inline-block;
+}
+#step1 {
+	float: left;
+	width: 145px;
+	padding-left: 25px;
+}
+#step2 {
+	float: left;
+	width: 145px;
+	padding-left: 25px;
+}
+#step3 {
+	float: left;
+	width: 145px;
+	padding-left: 25px;
+}
+
+#info {
+	float: right;
+	text-align: left;
+	letter-spacing: 0;
+}
+/* Give a quick and non-cross-browser friendly divider */
+.content .span10 {
+  margin-left: 0;
+  padding-left: 19px;
+  border-left: 1px solid #eee;
+}
+
+.topbar .btn {
+  border: 0;
+}
+
+
+/*header nav ul {
   list-style: none;
   margin: 0 0 2em;
   padding: 0;
 }
 header nav ul li {
   display: inline;
-}
+}*/
 #flash_notice, #flash_alert {
   padding: 5px 8px;
   margin: 10px 0;
@@ -26,4 +123,5 @@ header nav ul li {
   background-color: #FCC;
   border: solid 1px #C66;
 }
+
 

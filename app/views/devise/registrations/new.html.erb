@@ -1,20 +1,20 @@
-<h2>Sign up</h2>
-
+<h4>Se un Embajador del Voto</h4>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-<p><%= f.label :name %><br />
-<%= f.text_field :name %></p>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+	<div><%= f.label :name %></br><%= f.text_field :name %></div>
+	<div><%= f.label :lastName %></br><%= f.text_field :lastName %></div>
+	<div><%= f.label :bday %><br /><%= f.date_select :bday %></div>
+	<div><%= f.label :city %></br><%= f.text_field :city%></div>
+	<% states = State.find(:all, :order => :name) %>
+	<div><%= f.label :state %></br><%= f.collection_select :state_id, states, :id, :short %></div>
+  <div><%= f.label :phone %></br><%= f.text_field :phone %></div>
+	<div><%= f.label :email %></br><%= f.email_field :email %></div>
+  <div><%= f.label :password %></br><%= f.password_field :password %></div>
+  <div><%= f.label :password_confirmation %></br><%= f.password_field :password_confirmation %></div>
+	
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit "Sign up" %></div>
+  <div id="butt"><%= f.submit "Registrar" %></div>
 <% end %>
 
-<%= render :partial => "devise/shared/links" %>
+

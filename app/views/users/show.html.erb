@@ -1,4 +1,53 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<p>User: <%= @user.name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
+	<p>Haz click en los campos para cambiarlos</p>
+<div class="l1">
+
+	<p>
+	  <b>Nombre:</b>
+	  <%= best_in_place @user, :name %>
+	</p>
+	<p>
+	  <b>Apellido:</b>
+	  <%= best_in_place @user, :lastName %>
+	</p>
+	<p>
+	  <b>Cedula:</b>
+	  <%= best_in_place @user, :cedula, :nil => "Presiona aqui para agregar"  %>
+	</p>
+	<p>
+	  <b>Email:</b>
+	  <%= best_in_place @user, :email %>
+	</p>
+	<p>
+	  <b>Ciudad:</b>
+	  <%= best_in_place @user, :city %>
+	</p>
+	<% 
+		states = State.find(:all, :order => :name) 
+		a = Array.new
+		states.collect! {|x| [x.id, x.name] }
+	%>
+	<p>
+	  <b>Estado:</b>
+	  <%= best_in_place @user, :state_id, :type => :select, :collection => states %>
+	</p>
+	<p>
+	  <b>Telefono:</b>
+	  <%= best_in_place @user, :phone %>
+	</p>
+</div>
+
+<div class="l2">
+	<p>
+	  <b>Estas inscrito para votar en el Exterior?</b></br>
+	  <%= best_in_place @user, :esta_inscrito, :type => :checkbox, :collection => ["No", "Si"] %>
+	</p>
+
+	<p>
+	  <b>En caso que no, ¿tienes intenciones de registrarte antes del 07 de mayo? (Fecha limite para votar en las elecciones presidenciales de octubre de 2012)</b></br>
+	  <%= best_in_place @user, :tiene_intencion, :type => :checkbox, :collection => ["No", "Si"]  %>
+	</p>
+	<p>
+	  <b>Tienes cedula laminada (vigente o vencida)?</b></br>
+	  <%= best_in_place @user, :tiene_cedula, :type => :checkbox, :collection => ["No", "Si"] %>
+	</p>
+</div>

@@ -1,18 +1,15 @@
 <% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>        
-  </li>
+	<div class = "pull-right">
+		<p>
+		 <b>Hola <%= current_user.name %> | <%= link_to "Salir", destroy_user_session_path, :method => 'delete' %></b>
+		</p>
+	</div>
 <% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path)  %>  
-  </li>
-<% end %>
-<% if user_signed_in? %>
-  <li>
-  <%= link_to('Edit account', edit_user_registration_path) %>
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Sign up', new_user_registration_path)  %>
-  </li>
+  
+	<%= form_for("user", :url => user_session_path, :html => { :class => "pull-right"}) do |f| %>
+	  	<%= f.email_field :email, :class => "input-small" ,:placeholder => "Email", :size => 20%>
+		  <%= f.password_field :password, :class => "input-small" , :placeholder => "Clave", :size => 10 %>
+			<button class="btn" name="commit" type="submit">Entrar</button>
+	<% end %>
+
 <% end %>
