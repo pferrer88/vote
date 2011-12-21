@@ -18,7 +18,10 @@ Voto::Application.routes.draw do
   root :to => "home#index"
 
   devise_for :users, :controllers => { :invitations => 'users/invitations' }
-  resources :users, :only => [:show,:update]
+  
+  resources :users, :only => [:show,:update] do
+    get 'red', :on => :member
+  end
 
 
   # The priority is based upon order of creation:
