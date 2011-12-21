@@ -18,7 +18,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email #, :message => "ya fue usado"
   
   scope :invitado, where(:city => nil)
-  scope :por_confirmar, where("city NOT NULL and comfirmed = 'f'")
+  # scope :por_confirmar, where("city NOT NULL and comfirmed = 'f'")
+  scope :por_confirmar, where("city IS NOT NULL and comfirmed = 'f'")
   scope :confirmado, where(:comfirmed => true)
   scope :embajador, where(:embajador => true)
   
