@@ -8,7 +8,7 @@ class AddDetailsToUsers < ActiveRecord::Migration
     add_column :users, :cedula, :integer
     add_column :users, :bday, :date
     add_column :users, :zip, :integer
-    add_column :users, :phone, :integer
+    add_column :users, :phone, :bigint
     add_column :users, :points, :integer, :default => 0
     add_column :users, :esta_inscrito, :boolean
     add_column :users, :tiene_intencion, :boolean
