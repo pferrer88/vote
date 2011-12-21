@@ -1,0 +1,4 @@
+Nombre: <%= user.name %>
+Apellido: <%= user.lastName %>
+Confirmado: <%= user.comfirmed %>
+<%= button_to "Confirmar", confirm_admin_user_path , :method => :put%>

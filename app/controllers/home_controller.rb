@@ -1,7 +1,10 @@
 class HomeController < ApplicationController
+  respond_to :html, :js
+  
   def index
-    @users = User.all
-    @user = current_user
-    @invites = User.where(:invited_by_id => current_user)
+    @invited_count = User.count
+    @confirmed_count = User.confirmado.count
+    @embajador_count = User.embajador.count
+    @invites = User.invitado_por(current_user)
   end
 end

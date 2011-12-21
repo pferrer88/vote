@@ -1,19 +1,21 @@
 <% if !user_signed_in? %>
-
+	
 	<div id="left">
 		<%= render 'shared/register' %>
 	</div>
 	
 	<div id="right">
+		<h3> Hasta ahora somos:</h3>
 		<div id="thermometer_container">
-			
-			<div class="progressbar">
-			 <span class="progressbar-value">
-			  <em class="progressbar-cover" style="height:<%= @users.count %>px;"></em>
-			 </span>
+			<p> <%= @invited_count %> invitados </br> <%= @confirmed_count %> confirmados </br> <%= @embajador_count %> embajadores</p>			
+			<div class="bandera">
+			  <em id="inv" style="width:<%= @invited_count %>px;"></em>
+			  <em id="comf" style="width:<%= @confirmed_count %>px;"></em>
+			  <em id="emb" style="width:<%= @embajador_count %>px;"></em>
 			</div>
-			<h3> Hasta ahora somos <%= @users.count %> </h3>
 		</div>
+		<h3> En 7 estados</h3>
+		<span id="map"><%= image_tag "map.jpg" %> <span>
 	</div>
 	
 <% else %>	
@@ -23,14 +25,14 @@
 			<%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post, :class => "inline"} do |f| %>
 			  <%= devise_error_messages! %>
 		
-			  <p><%= f.label :name %>
-			  <%= f.text_field :name %></p>
+			  <p><%= f.label :name %></br>
+			  <%= f.text_field :name , :class => "span2 required"%></p>
 
-				<p><%= f.label :lastName %>
-			  <%= f.text_field :lastName %></p>
+				<p><%= f.label :lastName %></br>
+			  <%= f.text_field :lastName, :class => "span2 required" %></p>
 
-				<p><%= f.label :email %>
-			  <%= f.text_field :email %></p>
+				<p><%= f.label :email %></br>
+			  <%= f.text_field :email, :class => "span3 email required" %></p>
 
 			  <p><%= f.submit "Enviar", :class => "btn"  %></p>
 			
@@ -38,26 +40,33 @@
 			
 
 		</div>
-	  <div id="invite_table">
-			<table class="bordered-table">
+			<table id="invite_table" class="bordered-table">
 				<tr>
 					<th>Nombre</th>
-					<th>Confirmado</th>
+					<th>Email</th>
+					<th>Status</th>
 				</tr>
 				<% @invites.each do |invite| %> 
 					<tr>
 						<td><%= invite.name %> <%= invite.lastName %></td>
+						<td><%= invite.email %></td>
 						<td>
 							<% if invite.comfirmed %>
-							 	Si
+							 	Confirmado
+								<% if invite.embajador %>
+									Embajador
+								<% end %>
 							<% else%>
-								No
+								<% if invite.city == nil %>
+									Invitado
+								<% else%>
+									Registradp
+								<% end %>
 							<% end %>
 						</td>
 					</tr>
 				<% end %>
 			</table>
-		</div><!-- invite_table -->
 	</div><!-- profile -->
 <% end %>
 

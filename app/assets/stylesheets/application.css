@@ -10,7 +10,8 @@
 
 /* Override some defaults */
 html, body {
-  background-color: #eee;
+  background-color: #fff1e5;
+	background: url(bg.png);
 }
 body {
   padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
@@ -30,7 +31,7 @@ body {
   -webkit-border-radius: 0 0 6px 6px;
      -moz-border-radius: 0 0 6px 6px;
           border-radius: 0 0 6px 6px;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -webkit-box-shadow: 0 5px 5px rgba(0,0,0,.15);
      -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
           box-shadow: 0 1px 2px rgba(0,0,0,.15);
 }
@@ -92,7 +93,7 @@ div.page-header h1 {
 	letter-spacing: 0;
 }
 /* Give a quick and non-cross-browser friendly divider */
-.content .span10 {
+.content .span11 {
   margin-left: 0;
   padding-left: 19px;
   border-left: 1px solid #eee;
@@ -101,6 +102,23 @@ div.page-header h1 {
 .topbar .btn {
   border: 0;
 }
+.topbar-inner, .topbar .fill {
+
+  background-color: #101079;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#0a0958), to(#101079));
+  background-image: -moz-linear-gradient(top, #0a0958, #101079);
+  background-image: -ms-linear-gradient(top, #0a0958, #101079);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #101079), color-stop(100%, #101079));
+  background-image: -webkit-linear-gradient(top, #0a0958, #101079);
+  background-image: -o-linear-gradient(top, #0a0958, #101079);
+  background-image: linear-gradient(top, #0a0958, #101079);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0a0958', endColorstr='#101079', GradientType=0);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
 
 
 /*header nav ul {
@@ -111,7 +129,7 @@ div.page-header h1 {
 header nav ul li {
   display: inline;
 }*/
-#flash_notice, #flash_alert {
+/*#flash_notice, #flash_alert {
   padding: 5px 8px;
   margin: 10px 0;
 }
@@ -122,6 +140,63 @@ header nav ul li {
 #flash_alert {
   background-color: #FCC;
   border: solid 1px #C66;
+}*/
+
+#miniprofile {
+	border: 1px solid #000000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	float: left;
+	-moz-box-shadow: 0 0 3px #c6c901;
+	-webkit-box-shadow: 0 0 3px #c6c901;
+	box-shadow: 0 0 3px #c6c901;
+	background-color: #fefef4;
+	padding: 5px;
+}
+
+#pmenu {
+	float: left;
+	list-style-type: none;
+	padding: 10px;
+	margin: 0;
+	font-size: 14px;
+}
+
+#pmenu li {
+	padding: 5px;
+}
+
+#points {
+	float: right;
+	font-size: 18px;
+	padding: 4px;
+	margin: 4px 0 4px 4px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #ffffff;
+	-moz-box-shadow: 0 0 1px #bababa;
+	-webkit-box-shadow: 0 0 1px #bababa;
+	box-shadow: 0 0 1px #bababa;
+}
+
+#miniprofile p {
+	float: left;
+	margin: 0;
+}
+span.error {
+	clear: both;
+	display: block;
+	width: 100px;
+	margin-top: 5px;
+	color: #c70000;
+}
+div.alert-message {
+	margin: 0;
+	padding: 5px 20px;
+	float: right;
+	clear: both;
 }
 
 

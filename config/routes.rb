@@ -17,7 +17,7 @@ Voto::Application.routes.draw do
 
   root :to => "home#index"
 
-  devise_for :users
+  devise_for :users, :controllers => { :invitations => 'users/invitations' }
   resources :users, :only => [:show,:update]
 
 

@@ -1,5 +1,130 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+form.form-stacked .input {
+	margin: 8px;
+	float: left;
+}
+
+div.input.numeric.integer.optional {
+	clear:left;
+}
+
+form#user_new.simple_form.form-stacked {
+	float: left;
+	width: 250px;
+	padding-left: 0;
+}
+
+#user_new input.button.btn {
+	float: left;
+	margin: 10px 10px 10px 55px;
+}
+
+form.form-stacked select {
+	width: auto;
+}
+
+form.form-stacked label {
+	font-weight: normal;
+	font-style: normal;
+}
+
+#right {
+  float: left;
+  padding-left: 35px;
+}
 
 
+#left {
+  float: left;
+  clear: left;
+}
+
+
+#thermometer_container {
+  float: left;
+  padding: 8px;
+}
+
+
+#thermometer_container div.bandera {
+  width: 400px;
+  opacity: 1;
+  background: url(flagbg.png) no-repeat;
+  float: left;
+  z-index: -7;
+  height: 90px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #878787;
+}
+div.bandera em {
+height: 30px;
+float: left;
+clear: both;
+opacity: 1;
+background-color: #000000;
+
+}
+#inv {
+	background-image: url(flag.png);
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	border-top-left-radius: 10px;
+}
+#comf {
+	background: url(flag.png) 0;
+}
+#emb {
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-left-radius: 10px;
+	background: url(flag.png) 0 30px;
+	
+}
+
+#thermometer_container p {
+	float: left;
+	font-size: 14px;
+	line-height: 31px;
+	margin-right: 10px;
+}
+
+#map {
+  float: left;
+  padding-left: 75px;
+}
+
+form#user_new.inline {
+	float: left;
+}
+
+#user_new.inline p {
+	float: left;
+	margin-right: 10px;
+}
+
+#user_new.inline p input.btn {
+	margin-top: 22px;
+}
+
+#invite_table {
+	width: auto;
+	clear: left;
+}
+
+#user_new label.error {
+	clear: both;
+	color: #ff3434;
+}
+
+#invite_form {
+	float: left;
+}
+
+#user_new.inline p label {
+	width: auto;
+}

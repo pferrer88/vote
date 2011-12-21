@@ -46,3 +46,5 @@ gem 'best_in_place'
 gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
 gem "twitter-bootstrap-rails"
+gem 'rack-pjax'
+gem 'simple_form'

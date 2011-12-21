@@ -1,20 +1,16 @@
-<%= semantic_form_for resource, :as => resource_name, :url => registration_path(resource_name), :namespace => 'reg_form' do |f| %>
-  <%= f.inputs do %>
-    <%= f.input :name, :required => true, :input_html => { :size => 15 } %>
-    <%= f.input :lastName, :required => true, :input_html => { :size => 15 } %>
-    <%= f.input :bday, :as => :date %>
-    <%= f.input :city, :required => true, :input_html => { :size => 15 }%>
-    <%= f.input :state, :required => true %>
-    <%= f.input :phone, :as => :phone, :input_html => { :size => 15 } %>
-    <%= f.input :email, :as => :email, :required => true %>
-    <%= f.input :password, :required => true, :input_html => { :size => 15 } %>
-    <%= f.input :password_confirmation, :required => true, :input_html => { :size => 15 } %>
-  <% end %>
+<%= simple_form_for resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "form-stacked"} do |f| %>
+	<%= devise_error_messages! %>
+  <%= f.input :name, :input_html => { :class => 'span2' } %>
+	<%= f.input :lastName, :input_html => { :class => 'span2' } %>
+	<%= f.input :bday, :as => :date, :start_year => Date.today.year - 90,
+	                                :end_year => Date.today.year - 12, :include_blank => true %>
+  <%= f.input :city, :input_html => { :class => 'span2' }%>
+  <%= f.association :state %>
+  <%= f.input :zip, :input_html => { :class => 'span2' } %>
+	<%= f.input :phone, :as => :tel, :input_html => { :class => 'span2' } %>
+  <%= f.input :email, :input_html => { :class => 'span4' } %>
+  <%= f.input :password, :input_html => { :class => 'span2 required' }%>
+  <%= f.input :password_confirmation, :input_html => { :class => 'span2 required' }%>
 
-  <%= f.buttons do %>
-    <%= f.commit_button :button_html => { :class => "btn", :disable_with => 'Espera...', :value => "Registrar"} %>
-  <% end %>
-
+  <%= f.button :submit, :class => 'btn' %>
 <% end %>
-
-

@@ -9,4 +9,11 @@
 //= require twitter/bootstrap
 //= require_tree .
 //= require jquery.purr
+//= require jquery.validate.min
 //= require best_in_place
+//= require jquery.pjax
+
+$(document).ready(function() {
+	$('a').pjax('#main');
+
+})

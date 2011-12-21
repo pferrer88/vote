@@ -1,4 +1,4 @@
-	<p>Haz click en los campos para cambiarlos</p>
+<span class="label notice" id="instruction">Haz click en los campos para cambiarlos</span>
 <div class="l1">
 
 	<p>
@@ -11,7 +11,7 @@
 	</p>
 	<p>
 	  <b>Cedula:</b>
-	  <%= best_in_place @user, :cedula, :nil => "Presiona aqui para agregar"  %>
+	  <%= best_in_place @user, :cedula, :nil => "-"  %>
 	</p>
 	<p>
 	  <b>Email:</b>
@@ -31,6 +31,10 @@
 	  <%= best_in_place @user, :state_id, :type => :select, :collection => states %>
 	</p>
 	<p>
+	  <b>Zip:</b>
+	  <%= best_in_place @user, :zip %>
+	</p>
+	<p>
 	  <b>Telefono:</b>
 	  <%= best_in_place @user, :phone %>
 	</p>
@@ -43,7 +47,7 @@
 	</p>
 
 	<p>
-	  <b>En caso que no, ¿tienes intenciones de registrarte antes del 07 de mayo? (Fecha limite para votar en las elecciones presidenciales de octubre de 2012)</b></br>
+	  <b>En caso que no, ¿tienes intenciones de registrarte antes del 07 de mayo? <small>Fecha limite para votar en las elecciones presidenciales de octubre de 2012</small></b></br>
 	  <%= best_in_place @user, :tiene_intencion, :type => :checkbox, :collection => ["No", "Si"]  %>
 	</p>
 	<p>
@@ -51,3 +55,6 @@
 	  <%= best_in_place @user, :tiene_cedula, :type => :checkbox, :collection => ["No", "Si"] %>
 	</p>
 </div>
+<script>
+$('.best_in_place').best_in_place()
+</script>
