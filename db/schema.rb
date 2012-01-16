@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(:version => 20111216195634) do
   create_table "products", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.decimal  "cost"
+    t.decimal  "cost",        :precision => 10, :scale => 0
     t.integer  "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(:version => 20111216195634) do
     t.integer  "cedula"
     t.date     "bday"
     t.integer  "zip"
-    t.integer  "phone"
+    t.integer  "phone",                  :limit => 8
     t.integer  "points",                                :default => 0
     t.boolean  "esta_inscrito"
     t.boolean  "tiene_intencion"
