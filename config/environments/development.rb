@@ -34,6 +34,6 @@ Voto::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
   
-  # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = true
+  config.assets.precompile += ['map.jpg']
+  
 end
