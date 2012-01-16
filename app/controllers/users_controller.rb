@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   # get /red
   def red
     @user = User.find(params[:id])
-    @invites = User.where(:invited_by_id => current_user)
+    @invites = User.where(:invited_by_id => current_user).page(params[:page]).per(10)
   end
     
 end

@@ -1,1 +1,29 @@
 <h2>Red</h2>
+<table id="invite_table" class="bordered-table">
+	<tr>
+		<th>Nombre</th>
+		<th>Email</th>
+		<th>Status</th>
+	</tr>
+	<% @invites.each do |invite| %> 
+		<tr>
+			<td><%= invite.name %> <%= invite.lastName %></td>
+			<td><%= invite.email %></td>
+			<td>
+				<% if invite.comfirmed %>
+				 	Confirmado
+					<% if invite.embajador %>
+						Embajador
+					<% end %>
+				<% else%>
+					<% if invite.city == nil %>
+						Invitado
+					<% else%>
+						Registradp
+					<% end %>
+				<% end %>
+			</td>
+		</tr>
+	<% end %>
+</table>
+<%= paginate @invites %>

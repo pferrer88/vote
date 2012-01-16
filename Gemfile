@@ -2,15 +2,14 @@ require 'rbconfig'
 HOST_OS = RbConfig::CONFIG['host_os']
 source 'http://rubygems.org'
 gem 'rails', '3.1.3'
-gem 'pg'
+gem 'sqlite3'
 
 gem 'json'
 
-gem 'sass-rails',   '~> 3.1.5'
 group :assets do
-
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
+	gem 'sass-rails', '~> 3.1.5'
 end
 gem 'jquery-rails'
 if HOST_OS =~ /linux/i
@@ -23,12 +22,6 @@ gem "capybara", ">= 1.1.2", :group => :test
 gem "database_cleaner", ">= 0.7.0", :group => :test
 gem "launchy", ">= 2.0.5", :group => :test
 gem "guard", ">= 0.6.2", :group => :development
-
-gem 'rb-fsevent', :group => :development
-gem 'growl', :group => :development
-gem 'libnotify', :group => :development
-gem 'rb-inotify', :group => :development
-gem 'therubyracer', '>= 0.9.8'
 
 case HOST_OS
   when /darwin/i

@@ -40,7 +40,7 @@
 			
 
 		</div>
-			<table id="invite_table" class="bordered-table">
+			<table id="invite_table" class="condensed-table zebra-striped bordered-table">
 				<tr>
 					<th>Nombre</th>
 					<th>Email</th>
@@ -67,6 +67,7 @@
 					</tr>
 				<% end %>
 			</table>
+			<%= paginate @invites %>
 	</div><!-- profile -->
 <% end %>
 
