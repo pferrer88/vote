@@ -62,6 +62,6 @@ module Voto
     config.assets.version = '1.0'
     
     config.assets.paths << Rails.root.join("vendor", "assets", "stylesheets")
-    config.assets.paths << Rails.root.join("vendor", "assets", "javascript")
+    config.assets.paths << Rails.root.join("vendor", "assets", "javascripts")
   end
 end
