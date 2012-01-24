@@ -33,8 +33,4 @@ Voto::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-  
-  config.assets.precompile = true
-  config.assets.precompile += %w[active_admin.css active_admin.js]
-  
 end
