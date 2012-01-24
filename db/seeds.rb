@@ -34,5 +34,5 @@ puts 'New State created: ' << x.short
 puts 'SETTING UP DEFAULT USER LOGIN'
 User.delete_all
 user = User.create! :name => 'Pedro', :lastName => 'Ferrer', :email => 'user@mail.com', :password => 'password', :password_confirmation => 'password',
-  :state_id => x.id, :city => 'Philadelphia', :phone => '1234567890'
+  :state_id => x.id, :city => 'Philadelphia', :phone => '1234567890', :points => '5', :comfirmed => true
 puts 'New user created: ' << user.name
