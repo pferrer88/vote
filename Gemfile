@@ -13,6 +13,7 @@ group :assets do
 	gem 'sass-rails', '~> 3.1.5'
 end
 gem 'jquery-rails'
+
 if HOST_OS =~ /linux/i
   gem 'therubyracer', '>= 0.9.8'
 end
@@ -41,6 +42,7 @@ gem "guard-rails", ">= 0.0.3", :group => :development
 gem "guard-livereload", ">= 0.3.0", :group => :development
 gem "guard-rspec", ">= 0.4.3", :group => :development
 gem "guard-cucumber", ">= 0.6.1", :group => :development
+
 gem "devise", ">= 1.5.0"
 gem 'devise_invitable', '~> 0.6.0'
 gem 'best_in_place'
@@ -49,5 +51,5 @@ gem "meta_search",    '>= 1.1.0.pre'
 gem "twitter-bootstrap-rails"
 gem 'rack-pjax'
 gem 'simple_form'
-gem "rmagick"
+# gem "rmagick"
 gem "carrierwave"
