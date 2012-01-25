@@ -18,7 +18,7 @@ if HOST_OS =~ /linux/i
   gem 'therubyracer', '>= 0.9.8'
 end
 gem "rspec-rails", ">= 2.8.0.rc1", :group => [:development, :test]
-# gem "factory_girl_rails", ">= 1.4.0", :group => :test
+gem "factory_girl_rails", :group => :test
 gem "cucumber-rails", ">= 1.2.0", :group => :test
 gem "capybara", ">= 1.1.2", :group => :test
 gem "database_cleaner", ">= 0.7.0", :group => :test
