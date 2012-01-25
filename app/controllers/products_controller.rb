@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
-
+    @exchange = Exchange.new
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @product }
@@ -80,4 +80,22 @@ class ProductsController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def buy
+    user = params[:exchange][:user_id]
+    user = params[:exchange][:user_id]
+    @exchange = Exchange.new(params[:exchange])
+    
+    respond_to do |format|
+      if @exchange.save
+        format.html { redirect_to @product, :notice => 'Su compra fue realizada.' }
+        format.json { render :json => @product, :status => :created, :location => @product }
+      else
+        format.html { render :action => "new" }
+        format.json { render :json => @product.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+  
+  
 end
