@@ -87,7 +87,7 @@ class ProductsController < ApplicationController
     quantity = params[:exchange][:quantity].to_i
     cost = quantity.to_i * @product.cost.to_i
     
-    if current_user.points.to_i >= cost.to_i
+    if current_user.points.to_i >= cost.to_i and cost.to_i > 0  
       current_user.points -= cost.to_i
       @product.quantity -= quantity
       current_user.save!
