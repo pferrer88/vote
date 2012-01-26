@@ -94,7 +94,7 @@ class ProductsController < ApplicationController
       @product.save!
       params[:exchange][:user_id] = current_user.id
       params[:exchange][:product_id] = @product
-      params[:exchange][:points] = @product.cost
+      params[:exchange][:points] = cost
       params[:exchange][:status] = "Procesando"
       @exchange = Exchange.new(params[:exchange])
       respond_to do |format|
