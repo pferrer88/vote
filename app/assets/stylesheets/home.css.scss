@@ -30,7 +30,7 @@ form.form-stacked label {
 	font-style: normal;
 }
 
-#right {
+#rightMap {
   float: left;
   padding-left: 35px;
 }
@@ -122,9 +122,9 @@ form#user_new.inline {
 }
 
 #invite_form {
-	float: left;
+  float: left;
+  width: 100%;
 }
-
 #user_new.inline p label {
 	width: auto;
 }

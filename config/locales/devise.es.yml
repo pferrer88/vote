@@ -8,10 +8,12 @@ es:
       already_confirmed: "ya fue confirmado, por favor intenta iniciar sesión"
       not_locked: "no estaba bloqueado"
       not_saved:
-        one: "Un error ocurrió al tratar de guardar %{resource}:"
-        other: "%{count} errores ocurrieron al tratar de guardar %{resource}:"
+        one: ""
+        other: ""
   devise:
     invitations:
+      user:
+        updated: "Tu cuenta fue creada exitosamente"
       send_instructions: "La invitacion fue enviada"
     failure:
       already_authenticated: 'Ya has iniciado una sesión.'

@@ -3,10 +3,10 @@
 <p>Puntos: <%= user.points %></p>
 <p>Email: <%= user.email %></p>
 <p>Ciudad: <%= user.city %></p>
-<p>Estado: <%= user.state %></p>
+<p>Estado: <%= user.state.name if user.state %></p>
 <p>Zip: <%= user.zip %></p>
 <p>Telefono: <%= user.phone %></p>
-<p>Fecha de Nacimient0: <%= user.bday %></p>
+<p>Fecha de Nacimiento: <%= user.bday %></p>
 <p>Invitado Por: <%= user.invited_by %></p>
 <p>Confirmado: <%= user.comfirmed %></p>
 <p>Embajador: <%= user.embajador %></p>

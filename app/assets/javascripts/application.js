@@ -12,8 +12,11 @@
 //= require jquery.validate.min
 //= require best_in_place
 //= require jquery.pjax
+//= require_self
 
 $(document).ready(function() {
-	$('a').pjax('#main');
+	// $('a').pjax('#main');
+	
+});
+$(".alert-message").alert();
 
-})

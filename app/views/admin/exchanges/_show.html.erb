@@ -1,0 +1,10 @@
+<p>Comprador: <%= link_to exchange.user.name + " " + exchange.user.lastName, admin_user_path(exchange.user) %></p>
+<p>Producto: <%= link_to exchange.product.name, admin_product_path(exchange.product) %></p>
+<p>Cantidad: <%= exchange.quantity %></p>
+<p>Costo Total: <%= exchange.points %></p>
+<p>Direccion: <%= exchange.address %></p>
+<p>Ciudad: <%= exchange.city %></p>
+<p>Estado: <%= exchange.state.name %></p>
+<p>Zip: <%= exchange.zip %></p>
+<p>Telefono: <%= exchange.phone %></p>
+<p>Status: <%= exchange.status %></p>

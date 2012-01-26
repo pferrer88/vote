@@ -4,7 +4,7 @@
 		<%= render 'shared/register' %>
 	</div>
 	
-	<div id="right">
+	<div id="rightMap">
 		<h3> Hasta ahora somos:</h3>
 		<div id="thermometer_container">
 			<p> <%= @invited_count %> invitados </br> <%= @confirmed_count %> confirmados </br> <%= @embajador_count %> embajadores</p>			
@@ -21,7 +21,7 @@
 <% else %>	
 	<div id="profile">
 		<div id="invite_form">
-			<h5>Invita a un amigo</h5>
+			<h5>Invita a un amigo para acumular puntos</h5>
 			<%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post, :class => "inline"} do |f| %>
 			  <%= devise_error_messages! %>
 		
@@ -36,10 +36,12 @@
 
 			  <p><%= f.submit "Enviar", :class => "btn"  %></p>
 			
-			<% end %>
-			
+			<% end %>			
 
-		</div>
+		</div><!-- invite_form -->
+		
+		<div class="floatleft rmarg">
+			<h5>Mis invitados</h5>
 			<table id="invite_table" class="condensed-table zebra-striped bordered-table">
 				<tr>
 					<th>Nombre</th>
@@ -52,22 +54,48 @@
 						<td><%= invite.email %></td>
 						<td>
 							<% if invite.comfirmed %>
-							 	Confirmado
+							
 								<% if invite.embajador %>
 									Embajador
+								<% else %>
+									Confirmado
 								<% end %>
+								
 							<% else%>
+							
 								<% if invite.city == nil %>
 									Invitado
 								<% else%>
-									Registradp
+									Registrado
 								<% end %>
+								
 							<% end %>
 						</td>
 					</tr>
 				<% end %>
 			</table>
-			<%= paginate @invites %>
+			<%= paginate @invites, :param_name => "invite_page" %>
+		</div>	
+		<div class="floatleft">
+			<h5>Mis compras</h5>
+			<table id="invite_table" class="condensed-table zebra-striped bordered-table">
+				<tr>
+					<th>Producto</th>
+					<th>Cantidad</th>
+					<th>Precio</th>
+					<th>Status</th>
+				</tr>
+				<% @exchanges.each do |exchange| %> 
+					<tr>
+						<td><%= exchange.product.name %></td>
+						<td><%= exchange.quantity %></td>
+						<td><%= exchange.points %></td>
+						<td><%= exchange.status %></td>
+					</tr>
+				<% end %>
+			</table>
+			<%= paginate @exchanges, :remote => true, :param_name => "exchange_page" %>
+		</div>	
 	</div><!-- profile -->
 <% end %>
 

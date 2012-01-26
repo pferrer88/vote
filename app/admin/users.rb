@@ -42,6 +42,7 @@ ActiveAdmin.register User do
       f.input :state
       f.input :phone
       f.input :comfirmed
+      f.input :points
     end
     f.buttons
   end

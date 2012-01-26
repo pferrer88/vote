@@ -1,27 +1,60 @@
-<p id="notice"><%= notice %></p>
+<div id="left">
+	<h3>
+	  <%= @product.name %>
+	</h3>
 
-<h3>
-  <%= @product.name %>
-</h3>
+	<p>
+	  <%= image_tag @product.image_url(:thumb) if @product.image? %>
+	</p>
 
-<p>
-  <%= image_tag @product.image_url(:thumb) if @product.image? %>
-</p>
+	<p>
+	  <b>Descripcion:</b>
+	  <%= @product.description %>
+	</p>
 
-<p>
-  <b>Description:</b>
-  <%= @product.description %>
-</p>
+	<p>
+	  <b>Costo:</b>
+	  <%= @product.cost %> puntos
+	</p>
 
-<p>
-  <b>Cost:</b>
-  <%= @product.cost %>
-</p>
+	<%= link_to 'Atras', products_path %>
+</div>
+<div id="ProdActions">
+	<div id="showBuy" class = "btn">
+	  Comprar
+	</div>
+	<div id="buyForm">
+		<%= simple_form_for @exchange, :url => comprar_path(:id => @product.id), :html => {:class => "form-stacked"} do |f| %>
+		  <% if @exchange.errors.any? %>
+		    <div id="error_explanation">
+		      <h3><%= pluralize(@exchange.errors.count, "error") %> se encontraron:</h3>
+		      <ul>
+		      <% @exchange.errors.full_messages.each do |msg| %>
+		        <li><%= msg %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+			<%= f.input :user_id, :as => :hidden %>
+			<%= f.input :product_id, :as => :hidden %>
+			<%= f.input :quantity, :input_html => { :class => 'span1' } %>
+		  <%= f.input :address, :input_html => { :class => 'span4' } %>
+			<div class = "line">
+				<%= f.input :city, :input_html => { :class => 'span2' } %>
+				<%= f.association :state %>
+		  </div>
+			<div class = "line">
+				<%= f.input :zip, :as => :string, :input_html => { :class => 'span2' } %>
+		  	<%= f.input :phone, :as => :string, :input_html => { :class => 'span3' } %>
+			</div>
+			<div class = "line">
+		  	<%= f.button :submit, :value => "Comprar", :class => 'btn' %>
+				<div id="closeBuy" class = "btn">
+			  	Cancelar
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>
 
-<!-- <p>
-  <b>Quantity:</b>
-  <%= @product.quantity %>
-</p> -->
 
-
-<%= link_to 'Back', products_path %>

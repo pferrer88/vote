@@ -1,0 +1,37 @@
+#ProdActions {
+	float: left;
+}
+
+#buyForm {
+	float: left;
+	margin-left: 20px;
+	width: 200px;
+	display: none;
+}
+div#showBuy.btn {
+	margin-left: 80px;
+	margin-top: 100px;
+}
+
+div.line {
+	display: inline-block;
+	float: left;
+	width: 300px;
+}
+
+#new_exchange div.line input.button.btn {
+	margin: 7px;
+}
+
+div.product {
+	float: left;
+	width: 200px;
+}
+div.product img {
+	display: block;
+	padding-bottom: 5px;
+}
+
+span#pcost {
+	color: #c91919;
+}

@@ -2,9 +2,9 @@
 
 <% @products.each do |product| %>
   <div class="product">
-		<strong><%= product.name %></strong>
-    <%= product.cost %> puntos
-    <%= link_to 'Show', product %>
+		<%= image_tag product.image_url(:thumb) if product.image? %>
+	  <span id="pname"><strong><%= link_to product.name, product %></strong></span></br>
+    <span id="pcost"><%= product.cost %> puntos </span>
 	</div>
 <% end %>
 

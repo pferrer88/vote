@@ -1,29 +1,36 @@
-<h2>Red</h2>
-<table id="invite_table" class="bordered-table">
-	<tr>
-		<th>Nombre</th>
-		<th>Email</th>
-		<th>Status</th>
-	</tr>
-	<% @invites.each do |invite| %> 
+<h2>Mi Red</h2>
+<div class="floatleft rmarg">
+	<h5>Amigos Registrados</h5>
+	<table id="invite_table" class="bordered-table">
 		<tr>
-			<td><%= invite.name %> <%= invite.lastName %></td>
-			<td><%= invite.email %></td>
-			<td>
-				<% if invite.comfirmed %>
-				 	Confirmado
-					<% if invite.embajador %>
-						Embajador
-					<% end %>
-				<% else%>
-					<% if invite.city == nil %>
-						Invitado
-					<% else%>
-						Registradp
-					<% end %>
-				<% end %>
-			</td>
+			<th>Nombre</th>
+			<th>Lugar</th>
+			<th>Puntos</th>
 		</tr>
-	<% end %>
-</table>
-<%= paginate @invites %>
+		<% @friends.each do |friend| %> 
+			<tr>
+				<td><%= friend.name %> <%= friend.lastName %></td>
+				<td><%= friend.city %>, <%= friend.state.short %></td>
+				<td><%= friend.points %></td>
+			</tr>
+		<% end %>
+	</table>
+	<%= paginate @friends %>
+</div>
+<div class="floatleft">
+	<h5>Top 10 Amigos Embajadores</h5>
+	<table id="invite_table" class="bordered-table">
+		<tr>
+			<th>Nombre</th>
+			<th>Lugar</th>
+			<th>Status</th>
+			</tr>
+			<% @tops.each do |top| %> 
+				<tr>
+					<td><%= top.name %> <%= top.lastName %></td>
+					<td><%= top.city %>, <%= top.state.short %></td>
+					<td><%= top.points %></td>
+				</tr>
+			<% end %>
+		</table>
+</div>

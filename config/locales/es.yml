@@ -193,7 +193,15 @@ es:
       user: "Usuario"
       product: "Producto"
       state: "Estado"
+      exchange: "Compra"
     attributes:
+      exchange:
+        city: "Ciudad"
+        state: "Estado"
+        phone: "Telefono"
+        quantity: "Cantidad"
+        address: "Direccion"
+        points: "Puntos"
       user:
         email: "Email"
         name: "Nombre"
@@ -202,9 +210,17 @@ es:
         city: "Ciudad"
         state: "Estado"
         phone: "Telefono"
+        points: "Puntos"
         comfirmed: "Confirmado"
-        password_confirmation: "Contraseña Otravez"
+        password_confirmation: "Repita Contraseña"
         password: "Contraseña"
+      Product:
+        name: "Nombre"
+        description: "Descripcion"
+        cost: "Costo"
+        quantity: "Cantidad"
+        image: "Imagen"
+
     errors:
       template:
         header:

@@ -1,0 +1,21 @@
+<div id="left" class="span6">
+	<h2>Crea Tu Cuenta</h2>
+
+	<%= simple_form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :put, :class => "form-stacked"} do |f| %>
+		<%= devise_error_messages! %>
+		<%= f.hidden_field :invitation_token %>
+	  <%= f.input :name, :input_html => { :class => 'span2' } %>
+		<%= f.input :lastName, :input_html => { :class => 'span2' } %>
+		<%= f.input :bday, :as => :date, :start_year => Date.today.year - 90,
+		                                :end_year => Date.today.year - 12, :include_blank => true %>
+	  <%= f.input :city, :input_html => { :class => 'span2' }%>
+	  <%= f.association :state %>
+	  <%= f.input :zip, :input_html => { :class => 'span2' , :maxlength => 10} %>
+		<%= f.input :phone, :as => :string, :input_html => { :class => 'span2', :maxlength => 12 } %>
+	  <%= f.input :email, :input_html => { :class => 'span4' } %>
+	  <%= f.input :password, :input_html => { :class => 'span2 required' }%>
+	  <%= f.input :password_confirmation, :input_html => { :class => 'span2 required' }%>
+
+	  <%= f.button :submit, :class => 'btn' %>
+	<% end %>
+</div>

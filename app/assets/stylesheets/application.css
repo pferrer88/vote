@@ -143,16 +143,20 @@ header nav ul li {
 }*/
 
 #miniprofile {
-	border: 1px solid #000000;
+	border: 1px solid rgba(255, 255, 255, 0.65);
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	float: left;
-	-moz-box-shadow: 0 0 3px #c6c901;
-	-webkit-box-shadow: 0 0 3px #c6c901;
-	box-shadow: 0 0 3px #c6c901;
-	background-color: #fefef4;
+	-moz-box-shadow: -1px 1px 4px #a4a4a9;
+	-webkit-box-shadow: -1px 1px 4px #a4a4a9;
+	box-shadow: -1px 1px 4px #a4a4a9;
+	background-color: #f9f9f9;
 	padding: 5px;
+}
+
+#miniprofile:hover {
+	background-color: #eceeff;
 }
 
 #pmenu {
@@ -197,6 +201,13 @@ div.alert-message {
 	padding: 5px 20px;
 	float: right;
 	clear: both;
+}
+
+div.floatleft {
+	float: left;
+}
+.rmarg {
+	margin-right: 10px;
 }
 
 

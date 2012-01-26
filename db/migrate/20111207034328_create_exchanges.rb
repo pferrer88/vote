@@ -3,10 +3,12 @@ class CreateExchanges < ActiveRecord::Migration
     create_table :exchanges do |t|
       t.references :user
       t.references :product
+      t.references :state
       t.integer :quantity
       t.integer :points
       t.string :address
       t.string :city
+      t.string :status
       t.integer :zip
       t.integer :phone
 
