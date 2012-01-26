@@ -44,8 +44,8 @@
 				<%= f.association :state %>
 		  </div>
 			<div class = "line">
-				<%= f.input :zip, :as => :string, :input_html => { :class => 'span2' } %>
-		  	<%= f.input :phone, :as => :string, :input_html => { :class => 'span3' } %>
+				<%= f.input :zip, :input_html => { :class => 'span2' , :maxlength => 10} %>
+				<%= f.input :phone, :as => :string, :input_html => { :class => 'span2', :maxlength => 12 } %>
 			</div>
 			<div class = "line">
 		  	<%= f.button :submit, :value => "Comprar", :class => 'btn' %>

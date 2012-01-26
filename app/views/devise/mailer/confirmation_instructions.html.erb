@@ -1,5 +1,4 @@
-<p>Bienvenido a EmbajadoresDelVoto.org, <%= @resource.name %>!</p>
+<p>Hola <%= @resource.name %>! Bienvenido a EmbajadoresDelVoto.org</p>
 
-<p>Puedes confirmar tu cuenta clickeando en el link siguiente:</p>
+<p>Puedes confirmar tu cuenta siguiendo el link siguiente: <%= link_to 'Confirmar mi cuenta', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
 
-<p><%= link_to 'Confirmar mi cuenta', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
