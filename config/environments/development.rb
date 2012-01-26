@@ -1,36 +1,70 @@
 Voto::Application.configure do
-  # Settings specified here will take precedence over those in config/application.rb
+    # Settings specified here will take precedence over those in config/application.rb
 
-  # In the development environment your application's code is reloaded on
-  # every request.  This slows down response time but is perfect for development
-  # since you don't have to restart the web server when you make code changes.
-  config.cache_classes = false
+    # Code is not reloaded between requests
+    config.cache_classes = true
 
-  # Log error messages when you accidentally call methods on nil.
-  config.whiny_nils = true
+    # Full error reports are disabled and caching is turned on
+    config.consider_all_requests_local       = false
+    config.action_controller.perform_caching = true
 
-  # Show full error reports and disable caching
-  config.consider_all_requests_local       = true
-  config.action_controller.perform_caching = false
+    # Disable Rails's static asset server (Apache or nginx will already do this)
+    config.serve_static_assets = false
 
-  # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  # A dummy setup for development - no deliveries, but logged
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = false
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default :charset => "utf-8"
+    # Compress JavaScripts and CSS
+    config.assets.compress = true
 
+    # Don't fallback to assets pipeline if a precompiled asset is missed
+    config.assets.compile = false
 
-  # Print deprecation notices to the Rails logger
-  config.active_support.deprecation = :log
+    # Generate digests for assets URLs
+    config.assets.digest = true
 
-  # Only use best-standards-support built into browsers
-  config.action_dispatch.best_standards_support = :builtin
+    # Defaults to Rails.root.join("public/assets")
+    # config.assets.manifest = YOUR_PATH
 
-  # Do not compress assets
-  config.assets.compress = false
+    # Specifies the header that your server uses for sending files
+    # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
+    config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
-  # Expands the lines which load the assets
-  config.assets.debug = true
-end
+    # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
+    # config.force_ssl = true
+
+    # See everything in the log (default is :info)
+    # config.log_level = :debug
+
+    # Use a different logger for distributed setups
+    # config.logger = SyslogLogger.new
+
+    # Use a different cache store in production
+    # config.cache_store = :mem_cache_store
+
+    # Enable serving of images, stylesheets, and JavaScripts from an asset server
+    # config.action_controller.asset_host = "http://assets.example.com"
+
+    # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
+    # config.assets.precompile += %w( search.js )
+    config.assets.precompile += %w( *.jpg )
+    config.assets.precompile += %w[active_admin.css active_admin.js]
+    # Disable delivery errors, bad email addresses will be ignored
+    # config.action_mailer.raise_delivery_errors = false
+
+    # Enable threaded mode
+    # config.threadsafe!
+
+    # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
+    # the I18n.default_locale when a translation can not be found)
+    config.i18n.fallbacks = true
+
+    # Send deprecation notices to registered listeners
+    config.active_support.deprecation = :notify
+
+    config.action_mailer.default_url_options = { :host => 'embajadordelvoto.org' }
+    # ActionMailer Config
+    # Setup for production - deliveries, no errors raised
+    config.action_mailer.delivery_method = :ses
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.raise_delivery_errors = false
+    config.action_mailer.default :charset => "utf-8"
+
+  end
