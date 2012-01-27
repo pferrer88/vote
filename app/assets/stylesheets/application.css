@@ -245,11 +245,24 @@ span.error {
 	margin-top: 5px;
 	color: #c70000;
 }
-div.alert-message {
+#statusbar {
+	position:relative;
+	left:50%;
+	float:left;
+	clear:both;
 	margin: 0;
-	padding: 5px 20px;
-	float: right;
-	clear: both;
+	text-align:left;
+}
+div.alert-message {
+	display: inline-block;
+	position:relative;
+	left:-50%;
+	text-align:left;
+	padding: 5px;
+	margin-bottom: 0;
+}
+div.alert-message div {
+	float: left;
 }
 
 div.floatleft {

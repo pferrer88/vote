@@ -6,17 +6,17 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require_tree .
 //= require jquery.purr
 //= require jquery.validate.min
 //= require best_in_place
 //= require jquery.pjax
-//= require_self
+//= require twitter/bootstrap
 
 $(document).ready(function() {
 	// $('a').pjax('#main');
+	$(".alert-message").alert();
 	
 });
-$(".alert-message").alert();
+
 
