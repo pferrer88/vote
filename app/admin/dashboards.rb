@@ -1,5 +1,12 @@
 ActiveAdmin::Dashboards.build do
 
+
+    section "Informacion General" do
+      div do
+        render 'stats' # => this will render /app/views/admin/dashboard/_stats.html.erb
+      end
+    end
+    
     section "Usurios Reciente" do
       ul do
         User.all.collect do |user|
@@ -7,6 +14,16 @@ ActiveAdmin::Dashboards.build do
         end
       end
     end
+    
+    section "Compras Recientes" do
+      ul do
+        Exchange.all.collect do |compra|
+          li link_to(compra.quantity+" "+compra.product.name+" a "+compra.city, admin_exchange_path(compra))
+        end
+      end
+    end
+    
+    
 
   # Define your dashboard sections here. Each block will be
   # rendered on the dashboard in the context of the view. So just

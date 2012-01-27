@@ -13,7 +13,8 @@ ActiveAdmin.register Exchange do
     column :status
     column :created_at
     column "Acciones" do |exchange|
-      span link_to "Ver", admin_exchange_path(exchange)   
+      span link_to "Ver", admin_exchange_path(exchange) 
+        link_to "Eliminar", admin_exchange_path(exchange), :method => :delete     
     end
   end
   

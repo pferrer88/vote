@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
   
   scope :invitado, where(:city => nil)
   scope :por_confirmar, where("city IS NOT NULL and comfirmed = 'f'")
+  scope :registrado, where("city IS NOT NULL")
   scope :confirmado, where(:comfirmed => true)
   scope :embajador, where(:embajador => true)
   

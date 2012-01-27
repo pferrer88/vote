@@ -7,7 +7,7 @@
 <p>Zip: <%= user.zip %></p>
 <p>Telefono: <%= user.phone %></p>
 <p>Fecha de Nacimiento: <%= user.bday %></p>
-<p>Invitado Por: <%= user.invited_by %></p>
+<p>Invitado Por: <%= link_to user.invited_by.name + " " + user.invited_by.lastName, admin_user_path(user.invited_by) if user.invited_by %></p>
 <p>Confirmado: <%= user.comfirmed %></p>
 <p>Embajador: <%= user.embajador %></p>
 <%= button_to "Confirmar", confirm_admin_user_path , :method => :put%>
