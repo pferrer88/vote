@@ -10,14 +10,22 @@
 
 /* Override some defaults */
 html, body {
-  background-color: #fff1e5;
-	background: url(bg.png);
+	background: #555;
+	background: -moz-linear-gradient(top,#333 0,#555 200px);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#333),color-stop(200px,#555));
+	background: -webkit-linear-gradient(top,#333 0,#555 200px);
+	background: -o-linear-gradient(top,#333 0,#555 200px);
+	background: -ms-linear-gradient(top,#333 0,#555 200px);
+	background: linear-gradient(top,#333 0,#555 200px);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333',endColorstr='#555555',GradientType=0);
+	height: 100%;
 }
 body {
   padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
 }
-.container > footer p {
+.container footer p {
   text-align: center; /* center align it with the container */
+  color: #d4d4d4;
 }
 .container {
   width: 820px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
@@ -25,7 +33,7 @@ body {
 
 /* The white background content wrapper */
 .container > .content {
-  background-color: #fff;
+  background-color: #E3E3E3;
   padding: 20px;
   margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
   -webkit-border-radius: 0 0 6px 6px;
@@ -53,6 +61,7 @@ div#MainTitle {
 
 div.page-header h1 small {
 	float: left;
+	color: #b80000;
 }
 
 div.page-header h1 {
@@ -62,10 +71,13 @@ div.page-header h1 {
 
 /* @end */
 .page-header {
-  background-color: #f5f5f5;
+  background-color: #bdbdbd;
   padding: 20px 20px 10px;
   margin: -20px -20px 20px;
 	height: 135px;
+	-moz-box-shadow: 0 1px 1px #000000;
+	-webkit-box-shadow: 0 1px 1px #000000;
+	box-shadow: 0 1px 1px #000000;
 }
 
 .topbar div.field_with_errors {
@@ -144,9 +156,13 @@ header nav ul li {
 
 #miniprofile {
 	border: 1px solid rgba(255, 255, 255, 0.65);
+
 	-webkit-border-radius: 5px;
+	-webkit-border-bottom-left-radius: 0;
 	-moz-border-radius: 5px;
+	-moz-border-radius-bottomleft: 0;
 	border-radius: 5px;
+	border-bottom-left-radius: 0;
 	float: left;
 	-moz-box-shadow: -1px 1px 4px #a4a4a9;
 	-webkit-box-shadow: -1px 1px 4px #a4a4a9;
@@ -162,14 +178,39 @@ header nav ul li {
 #pmenu {
 	float: left;
 	list-style-type: none;
-	padding: 10px;
 	margin: 0;
 	font-size: 14px;
+	-moz-box-shadow: -1px 1px 4px #a4a4a9;
+	-webkit-box-shadow: -1px 1px 4px #a4a4a9;
+	box-shadow: -1px 1px 4px #a4a4a9;
+	background-color: #f9f9f9;
+-webkit-border-bottom-right-radius: 5px;
+-webkit-border-bottom-left-radius: 5px;
+-moz-border-radius-bottomright: 5px;
+-moz-border-radius-bottomleft: 5px;
+border-bottom-right-radius: 5px;
+border-bottom-left-radius: 5px;
+border-top: 2px ridge #f9dad4;
+opacity: 1;
 }
 
 #pmenu li {
-	padding: 5px;
+	padding: 5px 10px;
 }
+
+#pmenu li:hover {
+	background-color: #e9e9e8;
+}
+
+#bTienda:hover {
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
 
 #points {
 	float: right;
@@ -209,5 +250,6 @@ div.floatleft {
 .rmarg {
 	margin-right: 10px;
 }
+
 
 
