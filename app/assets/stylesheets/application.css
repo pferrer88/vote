@@ -9,18 +9,18 @@
 
 
 /* Override some defaults */
-html, body {
-	background: #555;
-	background: -moz-linear-gradient(top,#333 0,#555 200px);
-	background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#333),color-stop(200px,#555));
-	background: -webkit-linear-gradient(top,#333 0,#555 200px);
-	background: -o-linear-gradient(top,#333 0,#555 200px);
-	background: -ms-linear-gradient(top,#333 0,#555 200px);
-	background: linear-gradient(top,#333 0,#555 200px);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333',endColorstr='#555555',GradientType=0);
-	height: 100%;
+html{
+	background-color: #555555;
 }
 body {
+background: #555;
+background: -moz-linear-gradient(top,#333 0,#555 200px);
+background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#333),color-stop(200px,#555));
+background: -webkit-linear-gradient(top,#333 0,#555 200px);
+background: -o-linear-gradient(top,#333 0,#555 200px);
+background: -ms-linear-gradient(top,#333 0,#555 200px);
+background: linear-gradient(top,#333 0,#555 200px);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333',endColorstr='#555555',GradientType=0);
   padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
 }
 .container footer p {
@@ -32,8 +32,8 @@ body {
 }
 
 /* The white background content wrapper */
-.container > .content {
-  background-color: #E3E3E3;
+.container  .content {
+  background-color: #efeeee;
   padding: 20px;
   margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
   -webkit-border-radius: 0 0 6px 6px;
