@@ -27,6 +27,14 @@ module ApplicationHelper
     end
   end
   
+  # def page_title(title=view_context.t('.title'))
+  #     content_tag(:h1, title)
+  # end
+  
+  def title(page_title)
+    content_for(:title) { page_title }
+  end
+
   # def devise_error_messages!
   #     return "" if resource.errors.empty?
   # 
