@@ -1,8 +1,6 @@
 <%  
 	@invitados = User.invitado.count.to_s
-  #puts "MALDICION====" + @invitados.to_s
   @registrados =  User.registrado.count
-  #puts "MALDICION====" + @registrados.to_s
   @confirmados =  User.confirmado.count
   @embajadores =  User.embajador.count
 	@compras = Exchange.count
@@ -12,7 +10,6 @@
 	<b>Usuarios</b></br>
 		Invitados: <%= @invitados %></br>
 		Registrados: <%= @registrados %></br>
-		Confirmados: <%= @confirmados %></br>
 		Embajadores: <%= @embajadores %></br>
 </div>
 </br>
