@@ -1,18 +1,12 @@
-<h2>Envia una Invitacion</h2>
+<h2>Invita a un amigo</h2>
 
-<%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
+<%= simple_form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
   <%= devise_error_messages! %>
 
-  <p><%= f.label :name %><br />
-  <%= f.text_field :name %></p>
-
-	<p><%= f.label :lastName %><br />
-  <%= f.text_field :lastName %></p>
-
-	<p><%= f.label :email %><br />
-  <%= f.text_field :email %></p>
-
-  <p><%= f.submit "Enviar" %></p>
+	<%= f.input :name, :input_html => { :class => 'span2' } %>
+	<%= f.input :lastName, :input_html => { :class => 'span2' } %>
+	<%= f.input :email, :input_html => { :class => 'span4' } %>
+  <%= f.button :submit, :class => 'btn', :value => "Invitar" %>
 <% end %>
 
 <%= link_to "Home", after_sign_in_path_for(resource_name) %><br />

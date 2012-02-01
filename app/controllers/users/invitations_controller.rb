@@ -22,4 +22,24 @@ class Users::InvitationsController < Devise::InvitationsController
       # respond_with resource, :location => after_invite_path_for(resource)
     end
   end
+  
+  # PUT /resource/invitation
+  def update
+    self.resource = resource_class.accept_invitation!(params[resource_name])
+
+    if resource.errors.empty?
+      set_flash_message :notice, :updated
+      sign_in(resource_name, resource)
+
+      # Points for the user who invited you
+      resource.invited_by.points += 1
+      resource.invited_by.embajador=true
+      resource.invited_by.save!
+
+      respond_with resource, :location => after_accept_path_for(resource)
+    else
+      respond_with_navigational(resource){ render :edit }
+    end
+  end
+  
 end

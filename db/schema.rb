@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120125024324) do
+ActiveRecord::Schema.define(:version => 20120130170905) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -118,8 +118,12 @@ ActiveRecord::Schema.define(:version => 20120125024324) do
     t.integer  "invitation_limit"
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
+    t.integer  "assigned_to_id"
+    t.string   "assigned_to_type"
+    t.boolean  "staff",                                 :default => false
   end
 
+  add_index "users", ["assigned_to_id"], :name => "index_users_on_assigned_to_id"
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["invitation_token"], :name => "index_users_on_invitation_token"

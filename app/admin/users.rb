@@ -2,10 +2,11 @@ ActiveAdmin.register User do
   
 # Create sections on the index screen
   scope :all
-  scope :invitado
-  scope :por_confirmar, :default => true
-  scope :confirmado
+  scope :registrado, :default => true
+  # scope :confirmado
   scope :embajador
+  scope :invitado
+  scope :staff
   
   
   filter :lastName
@@ -13,7 +14,7 @@ ActiveAdmin.register User do
   filter :email
   filter :state
   filter :city
-  filter :comfirmed
+  # filter :comfirmed
   
   
   index do  
@@ -23,14 +24,17 @@ ActiveAdmin.register User do
     column :email  
     column :city  
     column :state
-    column :comfirmed
+    # column :comfirmed
     column :points
-    column "Acciones" do |user|
-      span link_to "Eliminar", admin_user_path(user), :method => :delete      
-      if (user.city != nil and !user.comfirmed)      
-        link_to "Confirmar", confirm_admin_user_path(user), :method => :put
-      end
-    end
+    default_actions
+    # column "Acciones" do |user|
+    #   span link_to "Eliminar", admin_user_path(user), :method => :delete      
+    #     link_to "Ver", admin_user_path(user)
+    #   ## No Confirmation method now
+    #   # if (user.city != nil and !user.comfirmed)      
+    #   #   link_to "Confirmar", confirm_admin_user_path(user), :method => :put
+    #   # end 
+    # end
   end
   
   form do |f|
@@ -43,6 +47,8 @@ ActiveAdmin.register User do
       f.input :phone
       f.input :comfirmed
       f.input :points
+      f.input :staff
+      f.input :assigned_to_id,  :as => :select, :collection => User.where(:staff => true)
     end
     f.buttons
   end
@@ -58,11 +64,12 @@ ActiveAdmin.register User do
      user = User.find(params[:id])
      user.comfirmed = true
      if user.save!
-       if user.invited_by
-         user.invited_by.points += 1
-         user.invited_by.embajador=true
-         user.invited_by.save!
-       end
+       ## This was before when the confirmation action was the one that generated the point, it was changed to the invitations_controller update action
+       # if user.invited_by
+       #   user.invited_by.points += 1
+       #   user.invited_by.embajador=true
+       #   user.invited_by.save!
+       # end
        redirect_to :action => :index, :notice => 'Usuario Confirmado.'
      else
        redirect_to :action => :index, :notice => 'Usuario no se puede confirmar.'

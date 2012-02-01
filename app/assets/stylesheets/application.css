@@ -198,7 +198,6 @@ border-bottom-left-radius: 5px;
 border-top: 2px solid #bdbab9;
 opacity: 1;
 margin-left: 0;
-letter-spacing: 1px;
 text-shadow: -1px 1px 1px #bfbbbb;
 z-index: -2;
 }
@@ -266,6 +265,9 @@ div.alert-message {
 	text-align:left;
 	padding: 5px;
 	margin-bottom: 0;
+}
+div.alert-message.block-message.error {
+	position: static;
 }
 div.alert-message div {
 	float: left;

@@ -10,7 +10,7 @@
 ###CREATE ADMIN
 puts 'SETTING UP DEFAULT ADMIN'
 AdminUser.delete_all
-a = AdminUser.create!(:email => 'admin@mail.com', :password => 'password', :password_confirmation => 'password')                              
+a = AdminUser.create!(:email => 'admin@mail.com', :password => 'schloeter', :password_confirmation => 'schloeter')                              
 puts "Admin Created"
 
 ###CREATE States
@@ -33,7 +33,11 @@ puts 'New State created: ' << x.short
 
 puts 'SETTING UP DEFAULT USER LOGIN'
 User.delete_all
-user = User.create! :name => 'Pedro', :lastName => 'Ferrer', :email => 'pferrer88@gmail.com', :password => 'password', :password_confirmation => 'password',
-  :state_id => x.id, :city => 'Urass', :phone => '1234567890', :points => '5', :comfirmed => true
+user1 = User.create! :name => 'Pedro', :lastName => 'Ferrer', :email => 'pferrer88@gmail.com', :password => 'asdqwe123', :password_confirmation => 'asdqwe123',
+  :state_id => x.id, :city => 'Urass', :phone => '1234567890', :points => '5', :comfirmed => true, :staff => true
+user1.confirm!
+puts 'New user created: ' << user1.name
+user = User.create! :name => 'Test', :lastName => 'User', :email => 'user@mail.com', :password => 'password', :password_confirmation => 'password',
+  :state_id => x.id, :city => 'Urass', :phone => '1234567890', :points => '5', :comfirmed => true, :assigned_to_id => user1.id
 user.confirm!
 puts 'New user created: ' << user.name

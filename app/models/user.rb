@@ -6,9 +6,10 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :lastName, :email, :password, :password_confirmation, :remember_me, :lastName, :comfirmed, :state_id,
-                  :phone, :city, :cedula, :points, :bday, :esta_inscrito, :tiene_intencion, :tiene_cedula, :zip
+                  :phone, :city, :cedula, :points, :bday, :esta_inscrito, :tiene_intencion, :tiene_cedula, :zip,:assigned_to_id, :staff
   
   belongs_to :state
+  belongs_to :assigned_to, :polymorphic => true
   has_many :exchanges
   has_many :invitations, :class_name => self.class.to_s, :as => :invited_by
   
@@ -18,6 +19,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email #, :message => "ya fue usado"
   
   scope :invitado, where(:city => nil)
+  scope :staff, where(:staff => true)
   scope :por_confirmar, where("city IS NOT NULL and comfirmed = 'f'")
   scope :registrado, where("city IS NOT NULL")
   scope :confirmado, where(:comfirmed => true)
@@ -25,11 +27,13 @@ class User < ActiveRecord::Base
   
   
   
+  def self.asignados_a(user)
+      where(:assigned_to_id => user)
+  end
   
   def self.invitado_por(user)
       where(:invited_by_id => user)
   end
-  
   
   def confirm(x)
     comfirmed=x

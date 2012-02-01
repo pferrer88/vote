@@ -8,7 +8,8 @@
 //= require jquery_ujs
 //= require_tree .
 //= require jquery.purr
-//= require jquery.validate.min
+//= require jquery.validate
+//= require messages_es
 //= require best_in_place
 //= require jquery.pjax
 //= require twitter/bootstrap
@@ -16,7 +17,7 @@
 $(document).ready(function() {
 	// $('a').pjax('#main');
 	$(".alert-message").alert();
-	
+	$( ".datepicker" ).datepicker();
 });
 
 

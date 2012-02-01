@@ -7,7 +7,35 @@
 <p>Zip: <%= user.zip %></p>
 <p>Telefono: <%= user.phone %></p>
 <p>Fecha de Nacimiento: <%= user.bday %></p>
-<p>Invitado Por: <%= link_to user.invited_by.name + " " + user.invited_by.lastName, admin_user_path(user.invited_by) if user.invited_by %></p>
-<p>Confirmado: <%= user.comfirmed %></p>
 <p>Embajador: <%= user.embajador %></p>
-<%= button_to "Confirmar", confirm_admin_user_path , :method => :put%>
+</br>
+
+<p>Invitado Por: <%= link_to  user.invited_by.name + " " + user.invited_by.lastName, admin_user_path(user.invited_by) if user.invited_by %></p>
+
+<p>
+	Gente Invitada:
+	<% @ass2 = User.where(:invited_by_id => user.id)%>
+	<% @ass2.each do |x| %>
+		<%= link_to x.name + " " + x.lastName, admin_user_path(x) %>
+	<% end %>
+</p>
+
+</br>
+
+<% if user.assigned_to_id %>
+	<% @ass = User.find(user.assigned_to_id) %>
+	<p>Asignado A: <%= link_to @ass.name + " " + @ass.lastName, admin_user_path(@ass)  %></p>
+<%end%>
+
+
+<% if user.staff%>
+	<% @ass2 = User.where(:assigned_to_id => user.id) %>
+	<p>
+		Gente Asignada:
+		 	<% @ass2.each do |x| %>
+					<%= link_to x.name + " " + x.lastName, admin_user_path(x) %>
+			<% end %>
+	</p>
+<%end%>
+
+<!-- <%= button_to "Confirmar", confirm_admin_user_path , :method => :put%> -->
