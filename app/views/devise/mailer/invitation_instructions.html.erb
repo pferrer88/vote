@@ -1,6 +1,6 @@
 <p>Hola <%= @resource.name %>!</p>
 
-<p>Alguien te ha invitado a <%= root_url %>, puedes convertirte en un embajador tambien al seguir el link siguiente.</p>
+<p><%= @resource.invited_by.name + " " + @resource.invited_by.lastName %> te ha invitado a <%= root_url %>, puedes convertirte en un embajador tambien al seguir el link siguiente.</p>
 
 <p><%= link_to 'Aceptar Invitacion', accept_invitation_url(@resource, :invitation_token => @resource.invitation_token) %></p>
 

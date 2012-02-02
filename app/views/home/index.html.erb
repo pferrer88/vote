@@ -66,7 +66,7 @@
 							<% else%>
 							
 								<% if invite.city == nil %>
-									Invitado
+									Invitado <%= link_to('Reenviar', user_invitation_path(:user => {:name => invite.name, :lastName => invite.lastName, :email => invite.email }), :method => "post") %>
 								<% else%>
 									Registrado
 								<% end %>
