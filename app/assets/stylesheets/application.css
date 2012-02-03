@@ -71,20 +71,19 @@ div.page-header h1 {
 
 /* @end */
 .page-header {
-  background: #E3E3E3;
-  background: -moz-linear-gradient(top,silver 0,#E3E3E3 100%);
-  background: -webkit-gradient(linear,left top,left bottom,color-stop(0,silver),color-stop(100%,#E3E3E3));
-  background: -webkit-linear-gradient(top,silver 0,#E3E3E3 100%);
-  background: -o-linear-gradient(top,silver 0,#E3E3E3 100%);
-  background: -ms-linear-gradient(top,silver 0,#E3E3E3 100%);
-  background: linear-gradient(top,silver 0,#E3E3E3 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#C0C0C0',endColorstr='#E3E3E3',GradientType=0);
-  padding: 20px 20px 10px;
-  margin: -20px -20px 20px;
-	height: 135px;
-	border-bottom: 1px solid #bdbdbd;
-}
-
+	  background: #E3E3E3;
+	  background: -moz-linear-gradient(top,silver 0,#E3E3E3 100%);
+	  background: -webkit-gradient(linear,left top,left bottom,color-stop(0,silver),color-stop(100%,#E3E3E3));
+	  background: -webkit-linear-gradient(top,silver 0,#E3E3E3 100%);
+	  background: -o-linear-gradient(top,silver 0,#E3E3E3 100%);
+	  background: -ms-linear-gradient(top,silver 0,#E3E3E3 100%);
+	  background: linear-gradient(top,silver 0,#E3E3E3 100%);
+	  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#C0C0C0',endColorstr='#E3E3E3',GradientType=0);
+	  padding: 20px 20px 10px;
+	  margin: -20px -20px 20px;
+		height: 115px;
+		border-bottom: 1px solid #bdbdbd;
+	}
 
 .topbar div.field_with_errors {
 	display: inline-block;
@@ -105,9 +104,11 @@ div.page-header h1 {
 }
 
 #info {
-	float: right;
+	float: left;
 	text-align: left;
 	letter-spacing: 0;
+	clear: left;
+	margin-left: 25px;
 }
 /* Give a quick and non-cross-browser friendly divider */
 .content .span11 {

@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   # get /red
   def red
     @user = User.find(params[:id])
-    @friends = User.invitado_por(current_user).confirmado.page(params[:page]).per(10)
+    @friends = User.invitado_por(current_user).registrado.page(params[:page]).per(10)
     @tops = User.invitado_por(current_user).embajador.order("points DESC").limit(10)
   end
     
