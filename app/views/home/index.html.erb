@@ -23,7 +23,7 @@
 		</div>
 		
 		<div id="video">
-			<iframe width="500" height="284" src="http://www.youtube.com/embed/btlgSAmUtE8" frameborder="0" allowfullscreen></iframe>
+			<iframe width="500" height="284" src="http://www.youtube.com/embed/btlgSAmUtE8?wmode=transparent" frameborder="0" allowfullscreen wmode="opaque"></iframe>
 		</div>
 	
 		
@@ -56,7 +56,7 @@
 			new TWTR.Widget({
 			  version: 2,
 			  type: 'profile',
-			  rpp: 4,
+			  rpp: 8,
 			  interval: 30000,
 			  width: 350,
 			  height: 450,
@@ -72,10 +72,10 @@
 			    }
 			  },
 			  features: {
-			    scrollbar: false,
-			    loop: true,
-			    live: true,
-			    behavior: 'default'
+			    scrollbar: true,
+			    loop: false,
+			    live: false,
+			    behavior: 'all'
 			  }
 			}).render().setUser('embajadoresvoto').start();
 			</script>
