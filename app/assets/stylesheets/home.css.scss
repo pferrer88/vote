@@ -49,7 +49,7 @@ form.form-stacked label {
 
 
 #thermometer_container div.bandera {
-	opacity: 1;
+  opacity: 1;
   background: url(flagbg.png) repeat-x;
   float: left;
   z-index: -7;
@@ -59,7 +59,7 @@ form.form-stacked label {
   border-radius: 10px;
   overflow: hidden;
   border: 2px solid #878787;
-  width: 400px;
+  width: 615px;
 }
 
 div.bandera em {
@@ -129,41 +129,42 @@ form#user_new.inline {
 #user_new.inline p label {
 	width: auto;
 }
+
 #righthome {
-	float: left;
-	width: 565px;
+  float: left;
+  width: 565px;
 }
 
 #video {
-	float: left;
-	margin: 10px;
-	padding-left: 15px;
+  float: left;
+  margin: 10px;
+  padding-left: 15px;
 }
 
 #termo_wrapper {
-	float: left;
-	padding-left: 13px;
-	line-height: 14px;
-	color: #000000;
+  float: left;
+  padding-left: 13px;
+  line-height: 14px;
+  color: #000000;
 }
 
 #twitmod {
-	float: left;
-	width: 255px;
-	margin: 10px;
+  float: left;
+  margin: 20px;
 }
 
 #fb {
-	float: left;
-	margin: 10px;
+  float: left;
+  margin: 20px;
 }
 
-p.head{
-	float: left;
-	width: 500px;
-	margin-left: 35px;
-	margin-top: 25px;
-	text-align: left;
-	font-size: 14px;
-	text-shadow: 0 0 1px #ffffff;
+
+p.head {
+  float: left;
+  width: 500px;
+  margin-left: 35px;
+  margin-top: 25px;
+  text-align: left;
+  font-size: 14px;
+  text-shadow: 0 0 1px #ffffff;
 }

@@ -25,64 +25,63 @@
 		<div id="video">
 			<iframe width="500" height="284" src="http://www.youtube.com/embed/btlgSAmUtE8" frameborder="0" allowfullscreen></iframe>
 		</div>
-		
-
-		
-		<div id= "termo_wrapper">	
-			<div id="thermometer_container">
-				<p>  <%= @registered_count %> Registrados</br><%= @embajador_count %> Embajadores</br> 2000( meta de Feb.)</p>			
-				<div class="bandera">
-				  <em id="inv" style="width:<%= (@registered_count/2000.0)*100.0 %>%;"></em>
-				  <em id="comf" style="width:<%= (@embajador_count/2000.0)*100.0 %>%;"></em>
-				  <em id="emb" style="width:100%;"></em>
-				</div><!-- bandera -->
-			</div><!-- thermo_cont -->
-		</div>
-
-		
-
-		
-		<div id="social">
-			<div id="twitmod">			
-				<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
-				<script>
-				new TWTR.Widget({
-				  version: 2,
-				  type: 'profile',
-				  rpp: 4,
-				  interval: 30000,
-				  width: 255,
-				  height: 300,
-				  theme: {
-				    shell: {
-				      background: '#EFEEEE',
-				      color: '#0f00db'
-				    },
-				    tweets: {
-				      background: '#ffffff',
-				      color: '#636363',
-				      links: '#0c00b8'
-				    }
-				  },
-				  features: {
-				    scrollbar: false,
-				    loop: true,
-				    live: true,
-				    behavior: 'default'
-				  }
-				}).render().setUser('embajadoresvoto').start();
-				</script>
-			</div>
-			
-			<div id="fb">			
-				<div class="fb-like-box" data-href="http://es-es.facebook.com/pages/Embajadores-del-Voto/322811151070229" data-width="255" data-show-faces="true" data-stream="true" data-header="true"></div>
-			</div>	
-					
-		</div>
-		
+	
 		
 	</div><!-- righthome -->
 	
+	
+	<div id= "termo_wrapper">	
+		<div id="thermometer_container">
+			<p>  <%= @registered_count %> Registrados</br><%= @embajador_count %> Embajadores</br> 2000( meta de Feb.)</p>			
+			<div class="bandera">
+			  <em id="inv" style="width:<%= (@registered_count/2000.0)*100.0 %>%;"></em>
+			  <em id="comf" style="width:<%= (@embajador_count/2000.0)*100.0 %>%;"></em>
+			  <em id="emb" style="width:100%;"></em>
+			</div><!-- bandera -->
+		</div><!-- thermo_cont -->
+	</div>
+
+	
+
+	
+	<div id="social">
+		<div id="twitmod">			
+			<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+			<script>
+			new TWTR.Widget({
+			  version: 2,
+			  type: 'profile',
+			  rpp: 4,
+			  interval: 30000,
+			  width: 350,
+			  height: 300,
+			  theme: {
+			    shell: {
+			      background: '#EFEEEE',
+			      color: '#0f00db'
+			    },
+			    tweets: {
+			      background: '#ffffff',
+			      color: '#636363',
+			      links: '#0c00b8'
+			    }
+			  },
+			  features: {
+			    scrollbar: false,
+			    loop: true,
+			    live: true,
+			    behavior: 'default'
+			  }
+			}).render().setUser('embajadoresvoto').start();
+			</script>
+		</div>
+		
+		<div id="fb">			
+			<div class="fb-like-box" data-href="http://es-es.facebook.com/pages/Embajadores-del-Voto/322811151070229" data-width="350" data-show-faces="true" data-stream="true" data-header="true"></div>
+		</div>	
+				
+	</div>
+
 <% else %>	
 	<% title "Embajadores Del Voto" %>
 	<div id="profile">
