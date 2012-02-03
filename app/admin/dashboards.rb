@@ -18,7 +18,7 @@ ActiveAdmin::Dashboards.build do
     section "Compras Recientes" do
       ul do
         Exchange.all.collect do |compra|
-          li link_to_if(compra, compra.quantity.to_s+" "+compra.product.name+" a "+compra.city, admin_exchange_path(compra))
+          li link_to_if(compra.product.name, compra.quantity.to_s+" "+compra.product.name+" a "+compra.city, admin_exchange_path(compra))
         end
       end
     end
