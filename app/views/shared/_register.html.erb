@@ -10,7 +10,7 @@
 
   <%= f.input :city, :input_html => { :class => 'span2' }%>
   <%= f.association :state %>
-  <%= f.input :zip, :input_html => { :class => 'span2' , :maxlength => 10} %>
+  <%= f.input :zip,, :as => :string :input_html => { :class => 'span2' , :maxlength => 10} %>
 	<%= f.input :phone, :as => :string, :input_html => { :class => 'span2', :maxlength => 12 } %>
   <%= f.input :email, :input_html => { :class => 'span4' } %>
   <%= f.input :password, :input_html => { :class => 'span2 required' }%>

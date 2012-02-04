@@ -14,8 +14,8 @@ class User < ActiveRecord::Base
   has_many :invitations, :class_name => self.class.to_s, :as => :invited_by
   
   validates_presence_of :name, :lastName, :email, :state_id, :city
-  validates_numericality_of :phone, :only_integer => true #, :message => "tiene que ser un numero"
-  validates_length_of :phone, :minimum => 10 #, :message => "debe ser mas de 10 digitos"
+  # validates_numericality_of :phone, :only_integer => true #, :message => "tiene que ser un numero"
+  # validates_length_of :phone, :minimum => 10 #, :message => "debe ser mas de 10 digitos"
   validates_uniqueness_of :email #, :message => "ya fue usado"
   
   scope :invitado, where(:city => nil)
