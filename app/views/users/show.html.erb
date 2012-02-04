@@ -1,4 +1,4 @@
-<% title 'Datos de'+ @user.name %>
+<% title 'Datos de '+ @user.name %>
 <span class="label notice" id="instruction">Haz click en los campos para cambiarlos</span>
 <div class="l1">
 
@@ -10,7 +10,7 @@
 	  <b>Apellido:</b>
 	  <%= best_in_place @user, :lastName %>
 	</p>
-	<p>
+	<p <%=" class='null'" if @user.cedula==nil %>>
 	  <b>Cedula:</b>
 	  <%= best_in_place @user, :cedula, :nil => "-"  %>
 	</p>
@@ -31,29 +31,29 @@
 	  <b>Estado:</b>
 	  <%= best_in_place @user, :state_id, :type => :select, :collection => states %>
 	</p>
-	<p>
+	<p<%=" class='null'" if @user.zip==nil %>>
 	  <b>Zip:</b>
 	  <%= best_in_place @user, :zip %>
 	</p>
-	<p>
+	<p<%=" class='null'" if @user.phone==nil %>>
 	  <b>Telefono:</b>
 	  <%= best_in_place @user, :phone %>
 	</p>
 </div>
 
 <div class="l2">
-	<p>
+	<p <%=" class='null'" if @user.esta_inscrito==nil %>>
 	  <b>Estas inscrito para votar en el Exterior?</b></br>
-	  <%= best_in_place @user, :esta_inscrito, :type => :checkbox, :collection => ["No", "Si"] %>
+	  <%= best_in_place @user, :esta_inscrito, :type => :select, :collection =>[[true, "Si"], [false, "No"]], :nil => "--"  %>
 	</p>
 
-	<p>
+	<p<%=" class='null'" if @user.tiene_intencion==nil %>>
 	  <b>En caso que no, ¿tienes intenciones de registrarte antes del 07 de mayo? <small>Fecha limite para votar en las elecciones presidenciales de octubre de 2012</small></b></br>
-	  <%= best_in_place @user, :tiene_intencion, :type => :checkbox, :collection => ["No", "Si"]  %>
+	  <%= best_in_place @user, :tiene_intencion, :type => :select, :collection =>[[true, "Si"], [false, "No"]], :nil => "--"  %>
 	</p>
-	<p>
+	<p<%=" class='null'" if @user.tiene_cedula==nil %>>
 	  <b>Tienes cedula laminada (vigente o vencida)?</b></br>
-	  <%= best_in_place @user, :tiene_cedula, :type => :checkbox, :collection => ["No", "Si"] %>
+	  <%= best_in_place @user, :tiene_cedula, :type => :select, :collection =>[[true, "Si"], [false, "No"]], :nil => "--" %>
 	</p>
 </div>
 <script>
