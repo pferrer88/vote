@@ -12,7 +12,7 @@
 	</p>
 	<p <%=" class='null'" if @user.cedula==nil %>>
 	  <b>Cedula:</b>
-	  <%= best_in_place @user, :cedula, :nil => "-"  %>
+	  <%= best_in_place @user, :cedula, :nil => "--------"  %>
 	</p>
 	<p>
 	  <b>Email:</b>
