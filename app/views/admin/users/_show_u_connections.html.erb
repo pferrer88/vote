@@ -1,17 +1,6 @@
-<p>Nombre: <%= user.name %></p>
-<p>Apellido: <%= user.lastName %></p>
 <p>Puntos: <%= user.points %></p>
-<p>Email: <%= user.email %></p>
-<p>Ciudad: <%= user.city %></p>
-<p>Estado: <%= user.state.name if user.state %></p>
-<p>Zip: <%= user.zip %></p>
-<p>Telefono: <%= user.phone %></p>
-<p>Fecha de Nacimiento: <%= user.bday %></p>
-<p>Embajador: <%= user.embajador %></p>
-</br>
-
 <p>Invitado Por: <%= link_to  user.invited_by.name + " " + user.invited_by.lastName, admin_user_path(user.invited_by) if user.invited_by %></p>
-
+<p>Es Embajador? <%= user.embajador %></p>
 <p>
 	Gente Invitada:
 	<% @ass2 = User.where(:invited_by_id => user.id)%>
@@ -29,6 +18,7 @@
 
 
 <% if user.staff%>
+	<h5>Staff</h5>
 	<% @ass2 = User.where(:assigned_to_id => user.id) %>
 	<p>
 		Gente Asignada:
@@ -37,5 +27,3 @@
 			<% end %>
 	</p>
 <%end%>
-
-<!-- <%= button_to "Confirmar", confirm_admin_user_path , :method => :put%> -->

@@ -25,7 +25,24 @@ class User < ActiveRecord::Base
   scope :confirmado, where(:comfirmed => true)
   scope :embajador, where(:embajador => true)
   
-  
+  def self.t_cedula()
+      yes = where(:tiene_cedula => true).count
+      no = where(:tiene_cedula => false).count
+      x = User.registrado.count - (yes + no)
+      return "Si:" + yes.to_s + " ........ No: " + no.to_s + " ........ NA: " + x.to_s
+  end
+  def self.t_intencion()
+      yes = where(:tiene_intencion => true).count
+      no = where(:tiene_intencion => false).count
+      x = User.registrado.count - (yes + no)
+      return "Si:" + yes.to_s + " ........ No: " + no.to_s + " ........ NA: " + x.to_s
+  end
+  def self.e_inscrito()
+      yes = where(:esta_inscrito => true).count
+      no = where(:esta_inscrito => false).count
+      x = User.registrado.count - (yes + no)
+      return "Si:" + yes.to_s + " ........ No: " + no.to_s + " ........ NA: " + x.to_s
+  end
   
   def self.asignados_a(user)
       where(:assigned_to_id => user)

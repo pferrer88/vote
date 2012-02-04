@@ -1,0 +1,14 @@
+<p><address>
+	<strong><%= user.name %> <%= user.lastName %></strong></br>
+	<%= user.city %>, <%= user.state.short if user.state %></br>
+	<abbr title="Telefono">Tel:</abbr>
+	<%= user.phone %></br>
+	<abbr title="Email">Email:</abbr>
+	<%= user.email %></br>
+	<abbr title="Zip">Zip:</abbr>
+	<%= user.zip %>
+</address></p>
+
+<p>Fecha de Nacimiento: <%= user.bday %></p>
+<p>Cedula: <%= user.cedula if user.cedula %></p>
+<!-- <%= button_to "Confirmar", confirm_admin_user_path , :method => :put%> -->

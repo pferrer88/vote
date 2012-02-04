@@ -54,8 +54,14 @@ ActiveAdmin.register User do
   end
   
   show do
-    panel "Detalles para " + user.name do
-      render "show"
+    panel "Info Personal" do
+      render "show_u_personal"
+    end
+    panel "Encuesta" do
+      render "show_u_optional"
+    end
+    panel "Conexiones" do
+      render "show_u_connections"
     end
   end
   

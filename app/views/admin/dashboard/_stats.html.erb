@@ -5,12 +5,18 @@
   @embajadores =  User.embajador.count
 	@compras = Exchange.count
 %>
-
 <div class ="floatlft ">
 	<b>Usuarios</b></br>
 		Invitados: <%= @invitados %></br>
 		Registrados: <%= @registrados %></br>
 		Embajadores: <%= @embajadores %></br>
+</div>
+</br>
+<div class ="floatlft ">
+	<b>Encuesta</b></br>
+	  Estan Inscritos:</br> <%= User.e_inscrito %></br>
+		Con Intencion: </br><%= User.t_intencion %></br>
+		Cedula Laminada: </br><%= User.t_cedula %></br>
 </div>
 </br>
 <div class ="floatlft ">

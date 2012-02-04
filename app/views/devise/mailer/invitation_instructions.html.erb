@@ -1,8 +1,20 @@
+
 <p>Hola <%= @resource.name %>!</p>
-
-<p><%= @resource.invited_by.name + " " + @resource.invited_by.lastName %> te ha invitado a <%= root_url %>, puedes convertirte en un embajador tambien al seguir el link siguiente.</p>
-
+ 
+<p><%= @resource.invited_by.name + " " + @resource.invited_by.lastName %> te ha invitado a ser parte de la iniciativa "Embajadores de Voto". Has click abajo para aceptar la invitación:</p> 
 <p><%= link_to 'Aceptar Invitacion', accept_invitation_url(@resource, :invitation_token => @resource.invitation_token) %></p>
+ 
+<h4>¿Qué es Embajadores del Voto?</h4>
 
+<p>Una iniciativa para promover el voto en el exterior. Ve nuestro video informativo en nuestra página para aprender más:<%= root_url %>. Juntos podemos lograr el cambio. Escribe el futuro de tu país donde quiera que estés.</p>
+
+<h4>¿Cómo funciona?</h4>
+
+<p>Acepta la invitación, regístrate en la pagina e invita a otros venezolanos que vivan en los estados de NY, NJ, CT, PA, RI, DE y VT. Por cada persona que invites y que luego se registre, ganas puntos que puedes canjear por premios (*). Visita la pagina web para que veas lo que te puedes ganar! </p>
+<p>Somos mas de 1 millón de venezolanos en el exterior. Eso es mas que la población del estado Táchira!. Únete a nosotros y aumentemos la participación electoral en el exterior!</p>
+
+<br />
 <p>Si no quieres aceptar la invitacion, ignora este mensaje.<br />
 Tu cuenta no sera creada sin que accedas al link superior.</p>
+ 
+<small>(*) promoción valida hasta agotarse la existencia.</small>
