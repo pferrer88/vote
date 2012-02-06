@@ -3,7 +3,18 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 jQuery ->
- 	$("#user_new").validate({
+
+	$('#otroEstado').modal
+	
+	state = $('#user_state_id')	
+	state.change -> 
+		x = state.children(':selected').text()
+		if x == "Otro Estado"
+			$('#otroEstado').modal('show')
+			state.val('')
+	
+	
+	$("#user_new").validate({
 
 			messages: {
 				'user[name]': {
@@ -31,12 +42,15 @@ jQuery ->
 					minlength: 'Minimo 6'
 				}
 			}
-			
+
 			rules: {
 							'user[password]': {
 								required:true,
 								minlength:6
 							}
 				}
-			
-		});
+
+			});
+
+
+		
