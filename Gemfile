@@ -56,3 +56,4 @@ gem "rmagick"
 gem "carrierwave"
 
 gem "aws-ses", :require => 'aws/ses'
+gem 'tinymce-rails'
