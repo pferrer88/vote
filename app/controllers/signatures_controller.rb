@@ -1,7 +1,6 @@
 class SignaturesController < InheritedResources::Base
   def create
     cookies[:carta] = true
-    create! { root_path } 
-    flash[:notice] = "Gracias por firmar" 
+    create! (:notice => "Gracias por firmar"){ root_path }
   end
 end
