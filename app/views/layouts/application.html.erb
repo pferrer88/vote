@@ -41,32 +41,55 @@
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
 		
-		<div class="topbar">
-      <div class="fill">
-        <div class="container">
-          <%= link_to 'Home', root_path, :class => "brand" %>
-          <ul class="nav">
-            <li><%= link_to '¿Quienes Somos?', about_index_path%></li>
-            <li><%= link_to 'Informacion Electoral', information_index_path%></li>
-            <li><%= link_to 'Contacto', contact_index_path%></li>
-          </ul>
-          <%= render 'shared/navigation' %>
-        </div>
-      </div>
-    </div>
+
+		<% if !user_signed_in? %>
+			<div class="topbar-home">
+	      <div class="fill">
+	        <div class="container">
+		
+						<div class="left">
+							<div id="MainTitle">
+		          	<h1><span id="logo">Embajadores</br>Del Voto</span></h1> </br>
+		        	</div>
+							<%= render 'shared/navigation' %>
+						</div>
+						
+						<div class="right">
+			        <ul class="nav">
+		          	<li><%= link_to 'Home', root_path%></li>
+								<li><%= link_to '¿Quienes Somos?', about_index_path%></li>
+		            <li><%= link_to 'Informacion Electoral', information_index_path%></li>
+		            <li><%= link_to 'Contacto', contact_index_path%></li>
+		          </ul>
+							<p class="head">
+								<strong>Somos</strong> un grupo de <strong>jóvenes  venezolanos</strong> de distintas organizaciones (Voto Joven, MUD, Venmundo, etc.) ubicados en el área de NY. Juntos formamos un movimiento llamado “Embajadores del Voto”, que<strong> busca promover el voto en el exterior</strong>.
+							</p>
+						</div>
+						
+	        </div>
+	      </div>
+	    </div>
+
+	    <div class="container">
+				<div class="content">
+		<% else %>
+			<div class="topbar">
+	      <div class="fill">
+	        <div class="container">
+	          <%= link_to 'Home', root_path, :class => "brand" %>
+	          <ul class="nav">
+	            <li><%= link_to '¿Quienes Somos?', about_index_path%></li>
+	            <li><%= link_to 'Informacion Electoral', information_index_path%></li>
+	            <li><%= link_to 'Contacto', contact_index_path%></li>
+	          </ul>
+	          <%= render 'shared/navigation' %>
+	        </div>
+	      </div>
+	    </div>
 	
-    <div class="container">
-			<div class="content">
-				<% if !user_signed_in? %>
-	        <div class="page-header">
-						<div id="MainTitle">
-		          <h1><span id="logo">Embajadores</br>Del Voto</span></h1> </br>
-		        </div>
-						<p class="head">
-							Somos un grupo de jóvenes  venezolanos de distintas organizaciones (Voto Joven, MUD, Venmundo, etc.) ubicados en el área de NY. Juntos formamos un movimiento llamado “Embajadores del Voto”, que busca promover el voto en el exterior.
-						</p>
-					</div>
-				<% end %>
+	    <div class="container">
+				<div class="content">
+		<% end %>
 				
         <div class="row">
 					<% if user_signed_in? %>
@@ -105,5 +128,16 @@
       </footer>
 
     </div> <!-- /container -->
+		
+		<div id="registro" class="modal hide fade in" style="display: none;">
+			<div class="modal-header">
+			  <a class="close" data-dismiss="modal">×</a>
+			  <h3>Registrate</h3>
+			</div>
+			<div class="modal-body">
+				<%= render 'shared/register' %>
+			</div>
+		</div>
+		
   </body>
 </html>

@@ -1,39 +1,30 @@
 
 <% if !user_signed_in? %>
 	<% title "Embajadores Del Voto - Vota fuera de Venezuela" %>
-	<div id="left">
-		<%= render 'shared/register' %>
-	</div>
-	
-	<div id="righthome">
 
-		<div id="info">
-			<div id="step1">
-				<h4>Registrate</h4>
-				<p>Te registras a nuestra web para crear tu perfil</p>
-			</div>
-			<div id="step2">
-				<h4>Colabora</h4>
-				<p>Se un embajador invitando a tus amigos venezolanos a registrarse desde tu perfil</p>
-			</div>
-			<div id="step3">
-				<h4>Gana</h4>
-				<p>Por cada amigo que registres ganas 1 punto que luego cambias por <%= link_to'premios', products_path %> </p>
-			</div>
+	<div id="info">
+		<div id="spasos"></div>
+		<div class="step act">
+			<h4>Registrate</h4><span class="snum">1</span>
+			<p>Te registras a nuestra web para crear tu perfil</p>
 		</div>
-		
-		<div id="video">
-			<!-- <iframe width="500" height="284" src="http://www.youtube.com/embed/btlgSAmUtE8?wmode=transparent" frameborder="0" allowfullscreen wmode="opaque"></iframe> -->
-			<iframe width="485" height="276" src="http://www.youtube.com/embed/aXVRR5AufDo?rel=0&wmode=transparent" frameborder="0" allowfullscreen></iframe>
+		<div class="step">
+			<h4>Colabora</h4><span class="snum">2</span>
+			<p>Se un embajador invitando a tus amigos venezolanos a registrarse desde tu perfil</p>
 		</div>
-	
-		
-	</div><!-- righthome -->
-	
+		<div class="step">
+			<h4>Gana</h4><span class="snum">3</span>
+			<p>Por cada amigo que registres ganas 1 punto que luego cambias por <u><%= link_to'premios', products_path %></u> </p>
+		</div>
+	</div>
 	
 	<div id= "termo_wrapper">	
 		<div id="thermometer_container">
-			<p>  <%= @registered_count %> Registrados</br><%= @embajador_count %> Embajadores</br> 2000 (Meta Febrero)</p>			
+			<table>
+				<tr id="amarillo"><td><%= @registered_count %> Registrados</td></tr>
+				<tr id="azul"><td><%= @embajador_count %> Embajadores</td></tr>
+				<tr id="rojo"><td>2000 (Meta Febrero)</td></tr>
+			</table>
 			<div class="bandera">
 			  <em id="inv" style="width:<%= (@registered_count/2000.0)*100.0 %>%;"></em>
 			  <em id="comf" style="width:<%= (@embajador_count/2000.0)*100.0 %>%;"></em>
@@ -41,8 +32,12 @@
 			</div><!-- bandera -->
 		</div><!-- thermo_cont -->
 	</div>
-
 	
+	
+	<div id="video">
+		<!-- <iframe width="500" height="284" src="http://www.youtube.com/embed/btlgSAmUtE8?wmode=transparent" frameborder="0" allowfullscreen wmode="opaque"></iframe> -->
+		<iframe width="485" height="276" src="http://www.youtube.com/embed/aXVRR5AufDo?rel=0&wmode=transparent" frameborder="0" allowfullscreen></iframe>
+	</div>
 
 	
 	<div id="social">
@@ -177,4 +172,25 @@
 		<p>Envianos un email a info@embajadoresdelvoto.org si quieres que ser un embajador en otro estado</p>
 	</div>
 </div>
-
+<% if @carta %>
+	<% if !cookies[:carta] %>
+		<div id="carta" class="modal hide fade in" style="display: none;">
+			<div class="modal-header">
+			  <a class="close" data-dismiss="modal">×</a>
+			  <h3><%=	@carta[0].title %></h3>
+			</div>
+			<div class="modal-body">
+				<%=raw @carta[0].content %>
+			</div>
+			<div class="modal-footer">
+		    <%= simple_form_for(@signature, :html => {:class => "form-stacked"}) do |f| %>
+				  <%= f.error_notification %>
+						<%=f.input :cartum_id, :as => :hidden, :input_html => { :value => @carta[0].id } %>
+					  <%= f.input :name, :label => 'Nombre y Apellido', :input_html => { :class => 'span3' } %>
+						<%= f.input :cedula, :label => 'Cedula', :as => :tel, :input_html => { :class => 'span2', :maxlength => 8 } %></br></br>
+						<%= f.button :submit, :class => 'btn large primary', :value => "Firmar" %>
+				<% end %>
+		  </div>
+		</div>
+	<% end %>
+<% end %>

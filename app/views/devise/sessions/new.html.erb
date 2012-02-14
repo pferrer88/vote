@@ -1,17 +1,20 @@
-<h2>Entra</h2>
 
-<%= simple_form_for resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form-stacked"} do |f| %>
+
+<div class="floatleft">
+	<h2>Entra</h2>
+	<%= simple_form_for resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form-stacked"} do |f| %>
   
-	<%= f.input :email, :input_html => { :class => 'span3 required' } %>
+		<%= f.input :email, :input_html => { :class => 'span3 required' } %>
 
-  <%= f.input :password, :input_html => { :class => 'span3 required' }%>
+	  <%= f.input :password, :input_html => { :class => 'span3 required' }%>
 
-  <% if devise_mapping.rememberable? -%>
-  <%= f.input :remember_me, :as => :boolean %>
-  <% end -%>
+	  <% if devise_mapping.rememberable? -%>
+	  <%= f.input :remember_me, :as => :boolean %>
+	  <% end -%>
 
-  <%= f.button :submit, :class => 'btn', :value => "Enviar" %>
-<% end %>
+	  <%= f.button :submit, :class => 'btn', :value => "Enviar" %>
+	<% end %>
+</div>
 
 <%= render :partial => "devise/shared/links" %>
 

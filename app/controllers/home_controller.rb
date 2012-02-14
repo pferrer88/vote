@@ -10,6 +10,11 @@ class HomeController < ApplicationController
       #@confirmed_count = User.confirmado.count
       @embajador_count = User.embajador.count
     end  
+    
+    if Cartum.activo.count != 0
+      @carta = Cartum.activo
+      @signature = @carta[0].signatures.build #Signature.new(:cartum_id => @carta[0].id)
+    end
   end
 
 end

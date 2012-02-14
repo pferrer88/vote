@@ -7,49 +7,78 @@
  *= require_tree . 
 */
 
-
-/* Override some defaults */
 html{
-	background-color: #555555;
+	
 }
 body {
-background: #555;
-background: -moz-linear-gradient(top,#333 0,#555 200px);
-background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#333),color-stop(200px,#555));
-background: -webkit-linear-gradient(top,#333 0,#555 200px);
-background: -o-linear-gradient(top,#333 0,#555 200px);
-background: -ms-linear-gradient(top,#333 0,#555 200px);
-background: linear-gradient(top,#333 0,#555 200px);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333',endColorstr='#555555',GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333',endColorstr='#555555',GradientType=0);
   padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
 }
 .container footer p {
   text-align: center; /* center align it with the container */
-  color: #d4d4d4;
+  color: #232323;
 }
 .container {
-  width: 800px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
+  width: 840px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
 }
+.topbar-home .container {
+  width: 840px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
+}
+
 
 /* The white background content wrapper */
 .container  .content {
-  background-color: #efeeee;
-  padding: 20px;
-  margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+	/* negative indent the amount of the padding to maintain the grid system */
   -webkit-border-radius: 0 0 6px 6px;
      -moz-border-radius: 0 0 6px 6px;
           border-radius: 0 0 6px 6px;
-  -webkit-box-shadow: 0 5px 5px rgba(0,0,0,.15);
-     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-          box-shadow: 0 1px 2px rgba(0,0,0,.15);
-}
+		  margin-top: 0;
+		  margin-bottom: 0;
+		  padding-top: 20px;
+	  }
 
 /* Page header tweaks */
 /* @group Logo */
 
 div#MainTitle {
 	float: left;
+	background-color: #ffffff;
+	padding: 10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #efeeee;
 }
+
+.topbar-home ul.nav a {
+	color: #ffffff;
+	font-size: 14px;
+}
+.topbar-home ul.nav a:hover {
+	text-decoration: underline;
+}
+
+div.left {
+	float: left;
+	margin-top: 75px;
+	width: 261px;
+}
+
+.topbar-home form.pull-left {
+	float: right;
+	margin-top: 40px;
+}
+
+.topbar-home a.btn.danger.large {
+	float: right;
+}
+
+.topbar-home input#user_email.input-small.span3 {
+	float: right;
+	margin-bottom: 5px;
+	width: 158px;
+}
+
 
 #logo {
 	padding-left: 54px;
@@ -57,6 +86,12 @@ div#MainTitle {
 	height: 68px;
 	padding-top: 30px;
 	float: left;
+}
+
+div.right {
+	float: right;
+	width: 500px;
+	margin-top: 70px;
 }
 
 div.page-header h1 small {
@@ -84,31 +119,72 @@ div.page-header h1 {
 		height: 115px;
 		border-bottom: 1px solid #bdbdbd;
 	}
-
-.topbar div.field_with_errors {
+	
+	div.topbar-home {
+		height: 450px;
+		display: block;
+		margin-top: -40px;
+		background: url(topbg.png) center #23346b;
+	}
+	
+	.topbar div.field_with_errors {
 	display: inline-block;
 }
-#step1 {
+.step {
 	float: left;
 	width: 145px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #132b6b;
+	color: #ffffff;
+	padding: 10px 15px 15px;
+	margin-left: 20px;
+	-moz-box-shadow: 8px 7px 10px #8b8b8b;
+	-webkit-box-shadow: 8px 7px 10px #8b8b8b;
+	box-shadow: 8px 7px 10px #8b8b8b;
+	overflow: hidden;
 }
-#step2 {
-	float: left;
-	width: 145px;
-	padding-left: 25px;
+.step h4{
+	color: #fff100;
 }
-#step3 {
+.step p{
+	clear: left;
+	margin: 0;
+	position: relative;
+	top: -20px;
+}
+
+.step.act h4{
+	color: #132b6b;
+}
+
+span.snum {
+	position: relative;
+	top: -40px;
+	right: -125px;
+	font-size: 45px;
+	font-weight: bold;
 	float: left;
-	width: 145px;
-	padding-left: 25px;
+}
+
+#spasos{
+	width: 225px;
+	height: 185px;
+	float: left;
+	background: url(pasos.jpg) no-repeat -12px -9px;
+}
+.step.act {
+	background-color: #fff100;
+	color: #3e3e3e;
 }
 
 #info {
-	float: left;
+	float: right;
 	text-align: left;
 	letter-spacing: 0;
 	clear: left;
-	margin-left: 25px;
+	margin-top: 10px;
 }
 /* Give a quick and non-cross-browser friendly divider */
 .content .span11 {
@@ -296,6 +372,4 @@ div.floatleft {
 .content .span3 {
 	margin-right: 11px;
 }
-
-
 

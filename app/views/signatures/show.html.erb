@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @signature.name %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%= @signature.lastName %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @signature.email %>
+</p>
+
+<p>
+  <b>Cedula:</b>
+  <%= @signature.cedula %>
+</p>
+
+
+<%= link_to 'Edit', edit_signature_path(@signature) %> |
+<%= link_to 'Back', signatures_path %>

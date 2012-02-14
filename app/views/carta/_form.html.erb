@@ -1,0 +1,14 @@
+<%= simple_form_for(@cartum) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :name %>
+    <%= f.input :title %>
+    <%= f.input :content %>
+    <%= f.association :signatures %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

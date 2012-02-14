@@ -1,4 +1,6 @@
 Voto::Application.routes.draw do
+  resources :signatures
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config

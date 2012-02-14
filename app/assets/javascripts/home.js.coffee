@@ -4,7 +4,11 @@
 
 jQuery ->
 
+	$('#carta').modal('show')
 	$('#otroEstado').modal
+	$('#registro').modal
+	$('#rmodal').click ->
+		$('#registro').modal('show')
 	
 	state = $('#user_state_id')	
 	state.change -> 

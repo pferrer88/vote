@@ -1,0 +1,7 @@
+<%= simple_form_for(@signature, :html => {:class => "form-stacked"}) do |f| %>
+<%= f.error_notification %>
+	<%= f.input :cartum_id, :as => :hidden %>
+  <%= f.input :name, :label => 'Nombre', :input_html => { :class => 'span3' } %>
+	<%= f.input :cedula, :label => 'Cedula', :as => :tel, :input_html => { :class => 'span2', :maxlength => 8 } %></br></br>
+	<%= f.button :submit, :class => 'btn', :value => "Firmar" %>
+<% end %>

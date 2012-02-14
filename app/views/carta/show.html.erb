@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @cartum.name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @cartum.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @cartum.content %>
+</p>
+
+<p>
+  <b>Signatures:</b>
+  <%= @cartum.signatures %>
+</p>
+
+
+<%= link_to 'Edit', edit_cartum_path(@cartum) %> |
+<%= link_to 'Back', carta_path %>

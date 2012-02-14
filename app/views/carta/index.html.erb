@@ -1,0 +1,29 @@
+<h1>Listing carta</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Signatures</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @carta.each do |cartum| %>
+  <tr>
+    <td><%= cartum.name %></td>
+    <td><%= cartum.title %></td>
+    <td><%= cartum.content %></td>
+    <td><%= cartum.signatures %></td>
+    <td><%= link_to 'Show', cartum %></td>
+    <td><%= link_to 'Edit', edit_cartum_path(cartum) %></td>
+    <td><%= link_to 'Destroy', cartum, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cartum', new_cartum_path %>
