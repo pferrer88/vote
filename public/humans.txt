@@ -3,10 +3,10 @@
 
 
 /* TEAM */
-  <your title>: <your name>
-  Site:
+  Embajadores del Voto: Pedro Ferrer
+  Site:www.embajadoresdelvoto.org
   Twitter:
-  Location:
+  Location:New York City, NY
 
 /* THANKS */
   Daniel Kehoe (@rails_apps) for the RailsApps project
