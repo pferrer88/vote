@@ -63,6 +63,7 @@ ActiveAdmin.register User do
     panel "Conexiones" do
       render "show_u_connections"
     end
+    active_admin_comments
   end
   
 

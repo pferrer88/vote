@@ -12,16 +12,18 @@ ActiveAdmin.register Exchange do
     column :state
     column :status
     column :created_at
-    column "Acciones" do |exchange|
-      span link_to "Ver", admin_exchange_path(exchange) 
-        link_to "Eliminar", admin_exchange_path(exchange), :method => :delete     
-    end
+    default_actions
+    # column "Acciones" do |exchange|
+    #   span link_to "Ver", admin_exchange_path(exchange) 
+    #     link_to "Eliminar", admin_exchange_path(exchange), :method => :delete     
+    # end
   end
   
   show do
     panel "Detalles de Compra" do
       render "show"
     end
+    active_admin_comments
   end
   
   form do |f|
