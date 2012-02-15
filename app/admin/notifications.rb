@@ -67,7 +67,7 @@ ActiveAdmin.register Notification do
     f.inputs "Informacion" do
       f.input :name  
       f.input :title
-      f.input :recipients, :as => :select, :collection => { "Todos" => 1, "Registrados" => 2, "Embajadores" => 3, "Invitados" => 4, "Invitados" => 5 }
+      f.input :recipients, :as => :select, :collection => { "Todos" => 1, "Registrados" => 2, "Embajadores" => 3, "Invitados" => 4, "Staff" => 5 }
       f.input :content, :input_html => {:class => 'editor'}
     end
     f.buttons
