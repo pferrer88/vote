@@ -21,10 +21,6 @@ ActiveAdmin.register Notification do
            UserMailer.notification_send(user,notification).deliver
          end
        when 4
-         User.invitado.all.each do |user|
-           UserMailer.notification_send(user,notification).deliver
-         end
-       when 5
          User.staff.all.each do |user|
            UserMailer.notification_send(user,notification).deliver
          end       
@@ -52,8 +48,6 @@ ActiveAdmin.register Notification do
       when 3
         'Embajadores'
       when 4
-        'Invitados'
-      when 5
         'Staff'
       else
         "No asignado"
@@ -67,7 +61,7 @@ ActiveAdmin.register Notification do
     f.inputs "Informacion" do
       f.input :name  
       f.input :title
-      f.input :recipients, :as => :select, :collection => { "Todos" => 1, "Registrados" => 2, "Embajadores" => 3, "Invitados" => 4, "Staff" => 5 }
+      f.input :recipients, :as => :select, :collection => { "Todos" => 1, "Registrados" => 2, "Embajadores" => 3, "Staff" => 4 }
       f.input :content, :input_html => {:class => 'editor'}
     end
     f.buttons
@@ -87,8 +81,6 @@ ActiveAdmin.register Notification do
         when 3
           'Embajadores'
         when 4
-          'Invitados'
-        when 5
           'Staff'
         else
           "No asignado"

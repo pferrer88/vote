@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default :from => "info@embajadoresdelvoto.org"
+  default :from => "embajador@embajadordelvoto.org"
   
   def notification_send(user, notification)
     @notification = notification
