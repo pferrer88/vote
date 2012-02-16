@@ -14,7 +14,6 @@ html{
 	
 }
 body {
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333',endColorstr='#555555',GradientType=0);
   padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
 }
 .container footer p {
