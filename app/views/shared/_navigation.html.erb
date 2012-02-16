@@ -6,7 +6,7 @@
 	</div>
 <% else %>
   
-	<%= form_for("user", :url => user_session_path, :html => { :class => "pull-left"}) do |f| %>
+	<%= form_for("user", :url => user_session_path, :html => { :class => "pull-left login"}) do |f| %>
 	  	<%= f.email_field :email, :class => "input-small span3" ,:placeholder => "Email", :size => 20%></br></br>
 			<button class="btn" name="commit" type="submit">Entrar</button>
 		  <%= f.password_field :password, :class => "input-small" , :placeholder => "Clave", :size => 10 %>

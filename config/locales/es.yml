@@ -264,6 +264,3 @@ es:
         even: "debe ser un número par"
         odd: "debe ser un número non"
   
-
-
-# Name translation missing: es.activerecord.errors.models.user.attributes.name.blank

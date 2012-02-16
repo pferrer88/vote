@@ -12,9 +12,18 @@ es:
         other: ""
   devise:
     invitations:
-      user:
-        updated: "Tu cuenta fue creada exitosamente"
+      updated: "Tu cuenta fue creada exitosamente"
       send_instructions: "La invitacion fue enviada"
+    mailer:
+      invitation_instructions:
+        subject: 'Recibistes Invitacion'
+        user_subject: 'Un amigo te ha invitado a ser Embajador'
+      confirmation_instructions: 
+        subject: 'Instrucciones de confirmación'
+      reset_password_instructions:
+        subject: 'Instrucciones de recuperación de contraseña'
+      unlock_instructions:
+        subject: 'Instrucciones para desbloquear'
     failure:
       already_authenticated: 'Ya has iniciado una sesión.'
       unauthenticated: 'Tienes que iniciar sesión o registrarte para poder continuar.'
@@ -52,10 +61,3 @@ es:
     omniauth_callbacks:
       success: 'Has sido autorizado satisfactoriamente de la cuenta %{kind}.'
       failure: 'No has sido autorizado en la cuenta %{kind} porque "%{reason}".'
-    mailer:
-      confirmation_instructions: 
-        subject: 'Instrucciones de confirmación'
-      reset_password_instructions:
-        subject: 'Instrucciones de recuperación de contraseña'
-      unlock_instructions:
-        subject: 'Instrucciones para desbloquear'

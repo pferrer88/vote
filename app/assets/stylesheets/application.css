@@ -109,6 +109,11 @@ div.left {
 .topbar-home button.btn{
 	float: right;
 }
+.login {
+	width: 180px;
+	height: 70px;
+}
+
 
 #logo {
 	padding-left: 54px;
