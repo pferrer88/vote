@@ -8,6 +8,8 @@
 */
 
 
+
+
 html{
 	
 }
@@ -44,6 +46,7 @@ footer {
           border-radius: 0 0 6px 6px;
 		  margin-top: 0;
 		  padding-top: 20px;
+		  margin-right: 0;
 	  }
 
 /* Page header tweaks */
@@ -113,9 +116,10 @@ div.left {
 
 
 #main {
-	float: left;
 	margin-bottom: 60px;
 }
+
+
 
 #footer {
 	text-align: center;
