@@ -8,8 +8,9 @@
   
 	<%= form_for("user", :url => user_session_path, :html => { :class => "pull-left"}) do |f| %>
 	  	<%= f.email_field :email, :class => "input-small span3" ,:placeholder => "Email", :size => 20%></br></br>
-		  <%= f.password_field :password, :class => "input-small" , :placeholder => "Clave", :size => 10 %>
 			<button class="btn" name="commit" type="submit">Entrar</button>
+		  <%= f.password_field :password, :class => "input-small" , :placeholder => "Clave", :size => 10 %>
+			
 	<% end %>
 			<a class="btn danger large" id="rmodal">Registrate</a>
 

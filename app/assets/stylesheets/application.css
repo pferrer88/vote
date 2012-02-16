@@ -103,7 +103,8 @@ div.left {
 }
 
 .topbar-home input#user_password.input-small {
-	
+	float: right;
+	margin-right: 4px;
 }
 .topbar-home button.btn{
 	float: right;
