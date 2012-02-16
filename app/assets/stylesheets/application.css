@@ -12,6 +12,7 @@ html{
 	
 }
 body {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333',endColorstr='#555555',GradientType=0);
   padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
 }
 .container footer p {
@@ -110,18 +111,6 @@ div.left {
 	width: 158px;
 }
 
-.topbar-home input#user_password.input-small {
-	float: right;
-	margin-right: 4px;
-}
-.topbar-home button.btn{
-	float: right;
-}
-
-.login {
-	width: 180px;
-	height: 70px;
-}
 
 #main {
 	float: left;
@@ -432,10 +421,6 @@ div.floatleft {
 	position: fixed;
 }
 
-input#user_email.span3.email.required {
-	position: static;
-	margin: 0;
-}
 
 a.brand {
 	background: url(logito.png) no-repeat center;
@@ -445,6 +430,27 @@ a.brand {
 	border-style: none;
 	margin-right: 40px;
 	opacity: 1;
+}
+
+.topbar-home label.email.required {
+	display: none;
+}
+
+.topbar-home label.password.required {
+	display: none;
+}
+
+.topbar-home div.input{
+	margin: 0;
+	float: right;
+}
+
+.topbar-home div.input.password.required {
+	margin-right: 2px;
+}
+
+.topbar-home input.button.btn {
+	float: right;
 }
 
 div.topbar .container {
@@ -459,3 +465,20 @@ a.brand:hover {
 	opacity: 1;
 	background-image: url(logito2.png);
 }
+
+form.simple_form.login {
+	float: right;
+	width: 175px;
+	margin-top: 38px;
+}
+
+.topbar-home label.boolean.optional {
+	color: #bebebf;
+	margin: 0;
+	padding: 0 5px 0 0;
+}
+
+.topbar-home div.input.boolean.optional {
+	margin-top: 5px;
+}
+
