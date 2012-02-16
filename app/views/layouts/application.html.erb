@@ -93,7 +93,7 @@
 				
         <div class="row">
 					<% if user_signed_in? %>
-	          <div class="span3">
+	          <div class="span3 sideleft">
 								<div id="miniprofile">
 									<p>
 										<b><%= link_to current_user.name + " " + current_user.lastName, current_user %></b>	</br>
@@ -110,7 +110,7 @@
 									<li id="bTienda"><%= link_to "Tienda", products_path %></li>
 								</ul>
 	          </div>
-						<div class="span10">
+						<div class="span11">
 					<% else %>
 						<div class="span14">
 					<% end %>
@@ -122,11 +122,15 @@
           </div>
         </div>
       </div>
-
+			<% if user_signed_in? %>
       <footer>
         <p>&copy; Embajadores del Voto es una iniciativa de Venezolanos en el Exterior (Venex-NY) Nueva York y Voto Jóven 2011</p>
       </footer>
-
+			<% else %>
+			<div id="footer">
+        <p>&copy; Embajadores del Voto es una iniciativa de Venezolanos en el Exterior (Venex-NY) Nueva York y Voto Jóven 2011</p>
+      </div>
+			<% end %>
     </div> <!-- /container -->
 		
 		<div id="registro" class="modal hide fade in" style="display: none;">
