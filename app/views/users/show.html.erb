@@ -48,7 +48,7 @@
 	</p>
 
 	<p<%=" class='null'" if @user.tiene_intencion==nil %>>
-	  <b>En caso que no, ¿tienes intenciones de registrarte antes del 07 de mayo? <small>Fecha limite para votar en las elecciones presidenciales de octubre de 2012</small></b></br>
+	  <b>En caso que no, ¿tienes intenciones de registrarte antes del 15 de Abril? <small>Fecha limite para votar en las elecciones presidenciales de octubre de 2012</small></b></br>
 	  <%= best_in_place @user, :tiene_intencion, :type => :select, :collection =>[[true, "Si"], [false, "No"]], :nil => "--"  %>
 	</p>
 	<p<%=" class='null'" if @user.tiene_cedula==nil %>>

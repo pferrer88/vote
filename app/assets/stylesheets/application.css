@@ -7,6 +7,15 @@
  *= require_tree . 
 */
 
+/* @override http://0.0.0.0:3000/assets/application.css?body=1 */
+
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+*/
+
+
 
 
 
@@ -19,6 +28,12 @@ body {
 .container footer p {
   text-align: center; /* center align it with the container */
   color: #4f4f4f;
+}
+
+#footer {
+	text-align: center;
+	padding-top: 10px;
+	border-top: 1px solid #2b2f62;
 }
 
 footer {
@@ -120,12 +135,7 @@ div.left {
 
 
 
-#footer {
-	text-align: center;
-	margin-top: -40px;
-	padding-top: 10px;
-	border-top: 2px solid #0405b5;
-}
+
 
 #profile {
 	float: left;
@@ -305,13 +315,13 @@ header nav ul li {
 }
 
 #miniprofile:hover {
-	background-color: #eceeff;
+
 }
 
 #pmenu {
 	float: left;
 	list-style-type: none;
-	font-size: 14px;
+	font-size: 13px;
 	-moz-box-shadow: -1px 2px 4px #a4a4a9;
 	-webkit-box-shadow: -1px 2px 4px #a4a4a9;
 	box-shadow: -1px 2px 4px #a4a4a9;
@@ -431,7 +441,7 @@ a.brand {
 	width: 97px;
 	overflow: hidden;
 	border-style: none;
-	margin-right: 40px;
+	margin-right: 51px;
 	opacity: 1;
 }
 
@@ -484,4 +494,5 @@ form.simple_form.login {
 .topbar-home div.input.boolean.optional {
 	margin-top: 5px;
 }
+
 
