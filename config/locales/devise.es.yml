@@ -17,7 +17,7 @@ es:
     mailer:
       invitation_instructions:
         subject: 'Recibistes Invitacion'
-        user_subject: 'Un amigo te ha invitado a ser Embajador'
+        user_subject: 'Un amigo te ha invitado a ser un Embajador del Voto'
       confirmation_instructions: 
         subject: 'Instrucciones de confirmación'
       reset_password_instructions:

@@ -495,4 +495,7 @@ form.simple_form.login {
 	margin-top: 5px;
 }
 
+div.span3.sideleft {
+	position: fixed;
+}
 

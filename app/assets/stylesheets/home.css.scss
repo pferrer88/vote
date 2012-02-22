@@ -174,12 +174,25 @@ form#user_new.inline {
 
 #twitmod {
   float: left;
-  margin: 20px 20px 20px 30px;
+  background: url(barratwit.jpg) no-repeat -129px -2px #ffffff;
+  padding-top: 49px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #e9e9e9;
 }
 
 #fb {
   float: left;
-  margin: 20px 20px 20px 35px;
+  background: url(barrafb.jpg) no-repeat 0 -1px #ffffff;
+  padding-top: 49px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+#social {
+	float: left;
+	margin-left: 23px;
 }
 
 
