@@ -1,17 +1,14 @@
-ActiveAdmin.register Cartum, :as => "Recolectas" do
-  menu :label => "Recolecta de Firmas", :parent => "La Red"
-  
+ActiveAdmin.register Page, :as => "Paginas"  do
+  menu :label => "Paginas", :parent => "Contenido"
   index do  
-    column :name  
+    column :title  
     default_actions
   end
   
   form do |f|
-    f.inputs "Informacion" do
-      f.input :name  
+    f.inputs "Informacion" do  
       f.input :title
       f.input :content, :input_html => {:class => 'editor'}
-      f.input :active
     end
     f.buttons
   end
@@ -19,14 +16,9 @@ ActiveAdmin.register Cartum, :as => "Recolectas" do
   show do |ad|
     attributes_table do
       row :title
-      row :name
       row :content do
         raw ad.content
       end
-      row :active
-    end
-    panel "Firmas" do
-      render "firmas"
     end
     active_admin_comments
   end

@@ -1,12 +1,11 @@
-<h2>Resend confirmation instructions</h2>
+<h2>Reenviar email de confirmacion</h2>
 
-<%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+<%= simple_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post, :class => "form-stacked" }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-  <div><%= f.submit "Resend confirmation instructions" %></div>
+	<%= f.input :email, :input_html => { :class => 'span3 required' } %>
+  
+	<%= f.button :submit, :class => 'btn', :value => "Reenviar confirmacion por email" %>
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>

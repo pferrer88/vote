@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120214205041) do
+ActiveRecord::Schema.define(:version => 20120222234010) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -72,12 +72,30 @@ ActiveRecord::Schema.define(:version => 20120214205041) do
   add_index "exchanges", ["product_id"], :name => "index_exchanges_on_product_id"
   add_index "exchanges", ["user_id"], :name => "index_exchanges_on_user_id"
 
+  create_table "images", :force => true do |t|
+    t.string   "img"
+    t.string   "name"
+    t.string   "description"
+    t.integer  "page_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "images", ["page_id"], :name => "index_images_on_page_id"
+
   create_table "notifications", :force => true do |t|
     t.string   "name"
     t.string   "title"
     t.text     "content"
     t.integer  "recipients"
     t.date     "sent"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pages", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

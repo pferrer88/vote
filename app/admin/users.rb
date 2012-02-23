@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  
+  menu :label => "Usuarios", :parent => "La Red", :priority => 1
 # Create sections on the index screen
   scope :all
   scope :registrado, :default => true

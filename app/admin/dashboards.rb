@@ -9,7 +9,7 @@ ActiveAdmin::Dashboards.build do
     
     section "Usuarios Recientes" do
       ul do
-        User.registrado.limit(10).collect do |user|
+        User.registrado.limit(10).order("created_at DESC").collect do |user|
           li link_to(user.name+" "+user.lastName, admin_user_path(user))
         end
       end

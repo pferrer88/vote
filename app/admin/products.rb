@@ -1,4 +1,5 @@
 ActiveAdmin.register Product do
+  menu :label => "Productos", :parent => "Tienda"
   
   index do  
     column :name  
@@ -19,4 +20,16 @@ ActiveAdmin.register Product do
     f.buttons
   end
   
+  show do |ad|
+    attributes_table do
+      row :name
+      row :image do
+        image_tag(ad.image)
+      end
+      row :description
+      row :quantity
+      row :cost
+    end
+    active_admin_comments
+  end
 end

@@ -1,5 +1,5 @@
-ActiveAdmin.register Notification do
-  
+ActiveAdmin.register Notification, :as => "Correo" do
+  menu :label => "Correo Masivo", :parent => "La Red"
   
   
   member_action :sendmail, :method => :put do

@@ -1,5 +1,5 @@
 ActiveAdmin.register State do
-  
+  menu :label => "Estados", :parent => "La Red", :priority => 2
   index do  
     column :name  
     column :short
