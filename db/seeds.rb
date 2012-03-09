@@ -32,7 +32,7 @@ boston = Center.create! :name => 'Consulado de Boston',
 puts 'New Center created: ' << boston.name
 
 chicago = Center.create! :name => 'Consulado de Chicago',
-                        :address => '20 N Wacker Dr., Suite # 1925, 19th Floor, Chicago, IL 60606',
+                        :address => '20 N Wacker Dr., Suite #1925, 19th Floor, Chicago, IL 60606',
                         :phone => '(312) 324-0907',
                         :country => us,
                         :website => 'http://www.chicago.embavenez-us.org/',
