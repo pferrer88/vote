@@ -1,5 +1,5 @@
 ActiveAdmin.register AdminUser, :as => "Admin" do
-   menu :label => "Administradores", :parent => "| Admin |"#, :priority => 9 , :if => proc{ current_admin_user.super }
+   menu :label => "Administradores", :parent => "| Admin |", :priority => 9 , :if => proc{ current_admin_user.super }
 # # Create sections on the index screen
 #   scope :all
 #   scope :registrado, :default => true
