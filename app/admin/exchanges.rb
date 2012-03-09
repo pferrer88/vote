@@ -1,5 +1,6 @@
 ActiveAdmin.register Exchange, :as => "Compras"  do
   menu :label => "Compras", :parent => "Tienda", :priority => 3
+  
   scope :all, :default => true
   scope :procesando
   scope :aceptados

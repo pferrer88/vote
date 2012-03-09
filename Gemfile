@@ -46,8 +46,7 @@ gem "guard-cucumber", ">= 0.6.1", :group => :development
 gem "devise", ">= 1.5.0"
 gem 'devise_invitable', '~> 0.6.0'
 gem 'best_in_place'
-gem 'activeadmin'
-gem "meta_search",    '>= 1.1.0.pre'
+gem 'activeadmin', :git => 'https://github.com/gregbell/active_admin.git'
 gem "twitter-bootstrap-rails"
 gem 'rack-pjax'
 gem 'simple_form'

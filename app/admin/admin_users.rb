@@ -1,5 +1,5 @@
 ActiveAdmin.register AdminUser, :as => "Admin" do
-   menu :label => "Administradores", :parent => "-Admin-", :priority => 9
+   menu :label => "Administradores", :parent => "| Admin |", :priority => 9 , :if => proc{ current_admin_user.super }
 # # Create sections on the index screen
 #   scope :all
 #   scope :registrado, :default => true
@@ -19,7 +19,9 @@ ActiveAdmin.register AdminUser, :as => "Admin" do
 #   
   index do  
     column :id
-    column :email  
+    column :email
+    column :center
+    column :super
     default_actions
   end
 #   
@@ -28,9 +30,13 @@ ActiveAdmin.register AdminUser, :as => "Admin" do
 #       f.input :name
 #       f.input :lastName 
        f.input :email
-       f.input :password
-       f.input :password_confirmation
-#       f.input :state
+       if f.template.current_admin_user.super and f.template.controller.action_name == "new" 
+         f.input :password
+         f.input :password_confirmation
+       end
+        
+       f.input :super
+       f.input :center
 #       f.input :phone
 #       f.input :comfirmed
 #       f.input :points
@@ -70,5 +76,7 @@ ActiveAdmin.register AdminUser, :as => "Admin" do
 #      end
 #   end
 
-   
+  # after_build do |currm|
+  #   currm.admin_user = current_admin_user
+  # end
 end

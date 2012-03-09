@@ -1,5 +1,8 @@
 ActiveAdmin.register User do
   menu :label => "Usuarios", :parent => "La Red", :priority => 1
+  scope_to :current_admin_user
+  
+  
 # Create sections on the index screen
   scope :all
   scope :registrado, :default => true
@@ -17,7 +20,7 @@ ActiveAdmin.register User do
   # filter :comfirmed
   
   
-  index do  
+  index do
     column "Nombre" do |user|
           link_to user.name+" "+user.lastName, admin_user_path(user)
     end 
@@ -83,5 +86,11 @@ ActiveAdmin.register User do
      end
   end
 
-   
+  # controller do 
+  #   #  authorize_resource
+  #     def index
+  #         @users = current_admin_user.center.users.page params[:page] #you must call .page for the index to work.
+  #     end 
+  # end
+  #  
 end

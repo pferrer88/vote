@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
   scope :registrado, where("city IS NOT NULL")
   scope :confirmado, where(:comfirmed => true)
   scope :embajador, where(:embajador => true)
+
   
   def self.t_cedula()
       yes = where(:tiene_cedula => true).count
@@ -58,5 +59,5 @@ class User < ActiveRecord::Base
     #   invited_by.points += 1
     # end
   end
-  
+
 end
