@@ -30,7 +30,7 @@ ActiveAdmin.register Notification, :as => "Correo" do
        notice="Emails enviados."
        redirect_to :action => :index, :notice => notice
      else
-       redirect_to :action => :index, :notice => 'No se pudo enviar nada.'
+       redirect_to :action => :index, :notice => 'No se pudo enviar el correo.'
      end
   end
   
