@@ -29,7 +29,6 @@ ActiveAdmin.register Center, :as => "Consulados"  do
     attributes_table do
       row :name
       row :country
-      row :name
       row :address
       row :phone
       row :website
