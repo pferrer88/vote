@@ -32,7 +32,7 @@ boston = Center.create! :name => 'Consulado de Boston',
 puts 'New Center created: ' << boston.name
 
 chicago = Center.create! :name => 'Consulado de Chicago',
-                        :address => '20 N Wacker Dr., Suite Nº 1925, 19th Floor, Chicago, IL 60606',
+                        :address => '20 N Wacker Dr., Suite # 1925, 19th Floor, Chicago, IL 60606',
                         :phone => '(312) 324-0907',
                         :country => us,
                         :website => 'http://www.chicago.embavenez-us.org/',
@@ -97,30 +97,30 @@ washington = Center.create! :name => 'Consulado de Washington',
                         :hours => '9:00 am a 1:00 pm.'                        
 puts 'New Center created: ' << washington.name
 
-###CREATE States DELETE THIS!!!!!!!!!!!!!!!
-puts 'CREATING STATES'
-State.delete_all
-
-x = State.create! :name => 'Connecticut', :short => 'CT', :center_id => new_york.id, :country_id =>us.id
-puts 'New State created: ' << x.short
-
-x = State.create! :name => 'Delaware', :short => 'DE', :center_id => new_york.id, :country_id =>us.id
-puts 'New State created: ' << x.short
-
-x = State.create! :name => 'Vermont', :short => 'VT', :center => new_york, :country_id =>us.id
-puts 'New State created: ' << x.short
-
-x = State.create! :name => 'Pennsylvania', :short => 'PA', :center => new_york, :country_id =>us.id
-puts 'New State created: ' << x.short
-
-x = State.create! :name => 'Rhode Island ', :short => 'RI', :center => new_york, :country_id =>us.id
-puts 'New State created: ' << x.short
-
-x = State.create! :name => 'New York', :short => 'NY', :center => new_york, :country_id =>us.id
-puts 'New State created: ' << x.short
-
-x = State.create! :name => 'New Jersey', :short => 'NJ', :center => new_york, :country_id =>us.id
-puts 'New State created: ' << x.short
+# ###CREATE States DELETE THIS!!!!!!!!!!!!!!!
+# puts 'CREATING STATES'
+# State.delete_all
+# 
+# x = State.create! :name => 'Connecticut', :short => 'CT', :center_id => new_york.id, :country_id =>us.id
+# puts 'New State created: ' << x.short
+# 
+# x = State.create! :name => 'Delaware', :short => 'DE', :center_id => new_york.id, :country_id =>us.id
+# puts 'New State created: ' << x.short
+# 
+# x = State.create! :name => 'Vermont', :short => 'VT', :center => new_york, :country_id =>us.id
+# puts 'New State created: ' << x.short
+# 
+# x = State.create! :name => 'Pennsylvania', :short => 'PA', :center => new_york, :country_id =>us.id
+# puts 'New State created: ' << x.short
+# 
+# x = State.create! :name => 'Rhode Island ', :short => 'RI', :center => new_york, :country_id =>us.id
+# puts 'New State created: ' << x.short
+# 
+# x = State.create! :name => 'New York', :short => 'NY', :center => new_york, :country_id =>us.id
+# puts 'New State created: ' << x.short
+# 
+# x = State.create! :name => 'New Jersey', :short => 'NJ', :center => new_york, :country_id =>us.id
+# puts 'New State created: ' << x.short
 
 
 # puts 'SETTING UP DEFAULT USER LOGIN'
