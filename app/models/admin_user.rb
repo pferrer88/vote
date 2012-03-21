@@ -15,7 +15,7 @@ class AdminUser < ActiveRecord::Base
     if self.super
       User
     else
-      center.users.includes(:invitations)
+      center.users
     end  
   end
   
