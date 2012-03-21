@@ -9,15 +9,6 @@
 # Corrected by Eloy Serra Labán: http://goo.gl/i9Kts, /nQ928, /XfKaX
 
 es:
-
-  # General stuff
-  time_ago_in_words: "%{time} ago"
-  ago: " ago"
-  ago_by: " ago by"
-  by: by
-  started_by: "Started by "
-  are_you_sure: Are you sure?
-  
   active_admin:
     batch_actions:
       button_label: "Accion Multiple"

@@ -50,7 +50,8 @@ gem 'devise_invitable', '~> 1.0.0'
 gem 'best_in_place'
 
 gem 'forem', :git => "git://github.com/radar/forem.git"
-# gem 'forem-theme-twist', :git => "git@github.com:pferrer88/forem-theme-twist.git"
+gem 'forem-redcarpet', :git => "git://github.com/radar/forem-redcarpet"
+gem 'forem-theme-twist', :git => "git@github.com:pferrer88/forem-theme-twist.git"
 # gem 'forem-theme-orange', :git => "git://github.com/radar/forem-theme-orange.git"
 
 gem 'activeadmin', :git => 'https://github.com/gregbell/active_admin.git'
