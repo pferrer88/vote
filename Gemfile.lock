@@ -1,10 +1,4 @@
 GIT
-  remote: git://github.com/radar/forem-theme-orange.git
-  revision: 8e78cb15c986d8d7b4322fb92f5fc87d5ca670ad
-  specs:
-    forem-theme-orange (0.0.1)
-
-GIT
   remote: git://github.com/radar/forem.git
   revision: cd49c2926d3a7e2bf2b5b556f956584d4426a3d4
   specs:
@@ -14,12 +8,6 @@ GIT
       rails (~> 3.1)
       simple_form
       workflow (= 0.8.0)
-
-GIT
-  remote: git@github.com:pferrer88/forem-theme-twist.git
-  revision: 9d0c482335449ac15563c16937d9a528c5807935
-  specs:
-    forem-theme-twist (0.0.1)
 
 GIT
   remote: http://github.com/seyhunak/twitter-bootstrap-rails.git
@@ -370,8 +358,6 @@ DEPENDENCIES
   factory_girl_rails
   fb_graph
   forem!
-  forem-theme-orange!
-  forem-theme-twist!
   growl
   guard (>= 0.6.2)
   guard-bundler (>= 0.1.3)
