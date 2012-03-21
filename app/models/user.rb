@@ -80,7 +80,7 @@ class User < ActiveRecord::Base
     image = access_token.info.image
     if user = User.where(:email => data.email).first
       user.fb_image = image unless user.fb_image != nil
-      u.fb_token = token unless token == nil
+      user.fb_token = token unless token == nil
       user.save!
     else # Create a user with a stub password.
       user = FbGraph::User.me(token).fetch
