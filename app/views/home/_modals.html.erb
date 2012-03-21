@@ -1,0 +1,33 @@
+<div id="otroEstado" class="modal hide fade in" style="display: none;">
+	<div class="modal-header">
+	  <a class="close" data-dismiss="modal">×</a>
+	  <h3>Embajador Del Voto</h3>
+	</div>
+	<div class="modal-body">
+	  <h4>Ayudanos a Crecer</h4>
+	  <p>Hasta ahora el registro esta limitado a las personas en estados que votan en el consulado de NY.</p>
+		<p>Envianos un email a info@embajadoresdelvoto.org si quieres que ser un embajador en otro estado</p>
+	</div>
+</div>
+<% if @carta %>
+	<% if !cookies[:carta] %>
+		<div id="carta" class="modal hide fade in" style="display: none;">
+			<div class="modal-header">
+			  <a class="close" data-dismiss="modal">×</a>
+			  <h3><%=	@carta[0].title %></h3>
+			</div>
+			<div class="modal-body">
+				<%=raw @carta[0].content %>
+			</div>
+			<div class="modal-footer">
+		    <%= simple_form_for(@signature, :html => {:class => "form-stacked"}) do |f| %>
+				  <%= f.error_notification %>
+						<%=f.input :cartum_id, :as => :hidden, :input_html => { :value => @carta[0].id } %>
+					  <%= f.input :name, :label => 'Nombre y Apellido', :input_html => { :class => 'span3' } %>
+						<%= f.input :cedula, :label => 'Cedula', :as => :tel, :input_html => { :class => 'span2', :maxlength => 8 } %></br></br>
+						<%= f.button :submit, :class => 'btn large primary', :value => "Firmar" %>
+				<% end %>
+		  </div>
+		</div>
+	<% end %>
+<% end %>

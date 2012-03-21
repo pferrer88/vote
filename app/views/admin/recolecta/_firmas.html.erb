@@ -1,8 +1,0 @@
-<p>
-	Firmas:
-	<% puts recolecta.id
-	@firmas = Signature.where(:cartum_id => recolecta.id)%>
-	<% @firmas.each do |x| %>
-		<%= x.name + " - " + x.cedula.to_s if x.name and x.cedula %></br>
-	<% end %>
-</p>

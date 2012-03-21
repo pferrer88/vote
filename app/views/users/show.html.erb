@@ -1,4 +1,5 @@
 <% title 'Datos de '+ @user.name %>
+
 <span class="label notice" id="instruction">Haz click en los campos para cambiarlos</span>
 <div class="l1">
 
@@ -18,7 +19,7 @@
 	  <b>Email:</b>
 	  <%= best_in_place @user, :email %>
 	</p>
-	<p>
+	<p <%=" class='null'" if @user.city==nil %>>
 	  <b>Ciudad:</b>
 	  <%= best_in_place @user, :city %>
 	</p>
@@ -27,7 +28,7 @@
 		a = Array.new
 		states.collect! {|x| [x.id, x.name] }
 	%>
-	<p>
+	<p <%=" class='null'" if @user.state==nil %>>
 	  <b>Estado:</b>
 	  <%= best_in_place @user, :state_id, :type => :select, :collection => states %>
 	</p>

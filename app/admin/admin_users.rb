@@ -12,6 +12,8 @@ ActiveAdmin.register AdminUser, :as => "Admin" do
 #   filter :lastName
 #   filter :cedula
    filter :email
+   filter :center
+   filter :super
 #   filter :state
 #   filter :city
 #   # filter :comfirmed
@@ -19,32 +21,28 @@ ActiveAdmin.register AdminUser, :as => "Admin" do
 #   
   index do  
     column :id
+    column :user
     column :email
     column :center
     column :super
     default_actions
   end
 #   
-   form do |f|
-     f.inputs "Informacion" do
-#       f.input :name
-#       f.input :lastName 
-       f.input :email
-       if f.template.current_admin_user.super and f.template.controller.action_name == "new" 
+  form do |f|
+   f.inputs "Informacion" do
+     f.input :center
+     f.input :user
+     f.input :email
+     if f.template.current_admin_user.super
+       if f.template.controller.action_name == "new" 
          f.input :password
          f.input :password_confirmation
        end
-        
        f.input :super
-       f.input :center
-#       f.input :phone
-#       f.input :comfirmed
-#       f.input :points
-#       f.input :staff
-#       f.input :assigned_to_id,  :as => :select, :collection => User.where(:staff => true)
      end
-     f.buttons
    end
+   f.buttons
+  end
 #   
 #   show do
 #     panel "Info Personal" do
@@ -76,7 +74,4 @@ ActiveAdmin.register AdminUser, :as => "Admin" do
 #      end
 #   end
 
-  # after_build do |currm|
-  #   currm.admin_user = current_admin_user
-  # end
 end

@@ -51,6 +51,8 @@ ActiveAdmin.register User do
       f.input :comfirmed
       f.input :points
       f.input :staff
+      f.input :forem_admin
+      
       f.input :assigned_to_id,  :as => :select, :collection => User.where(:staff => true)
     end
     f.buttons

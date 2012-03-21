@@ -1,0 +1,246 @@
+@import "twitter/bootstrap/bootstrap";
+body { padding-top: 60px; }
+
+@import "twitter/bootstrap/responsive";
+
+// Set the correct sprite paths
+@iconSpritePath: '/assets/glyphicons-halflings.png';
+@iconWhiteSpritePath:'/assets/glyphicons-halflings-white.png';
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/less.html for their names and documentation
+//
+// Example:
+// @linkColor: #ff0000;
+
+// Variables.less
+// Variables to customize the look and feel of Bootstrap
+// -----------------------------------------------------
+
+
+
+// GLOBAL VALUES
+// --------------------------------------------------
+
+// Links
+@linkColor:             #08c;
+@linkColorHover:        darken(@linkColor, 15%);
+
+// Grays
+@black:                 #000;
+@grayDarker:            #222;
+@grayDark:              #333;
+@gray:                  #555;
+@grayLight:             #999;
+@grayLighter:           #eee;
+@white:                 #fff;
+
+// Accent colors
+@blue:                  #049cdb;
+@blueDark:              #0064cd;
+@green:                 #46a546;
+@red:                   #9d261d;
+@yellow:                #ffc40d;
+@orange:                #f89406;
+@pink:                  #c3325f;
+@purple:                #7a43b6;
+
+// Typography
+@baseFontSize:          13px;
+@baseFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@baseLineHeight:        18px;
+@textColor:             @grayDark;
+
+// Buttons
+@primaryButtonBackground:    @linkColor;
+
+
+
+// COMPONENT VARIABLES
+// --------------------------------------------------
+
+// Z-index master list
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+@zindexDropdown:          1000;
+@zindexPopover:           1010;
+@zindexTooltip:           1020;
+@zindexFixedNavbar:       1030;
+@zindexModalBackdrop:     1040;
+@zindexModal:             1050;
+
+
+
+// Input placeholder text color
+@placeholderText:         @grayLight;
+
+// Hr border color
+@hrBorder:                @grayLighter;
+
+// Navbar
+@navbarHeight:                    40px;
+@navbarBackground:                darken(@blueDark, 20%);
+@navbarBackgroundHighlight:       @grayDark;
+@navbarLinkBackgroundHover:       transparent;
+
+@navbarText:                      @white;
+@navbarLinkColor:                 darken(@white, 20%);
+@navbarLinkColorHover:            @white;
+
+// Form states and alerts
+@warningText:             #c09853;
+@warningBackground:       #fcf8e3;
+@warningBorder:           darken(spin(@warningBackground, -10), 3%);
+
+@errorText:               #b94a48;
+@errorBackground:         #f2dede;
+@errorBorder:             darken(spin(@errorBackground, -10), 3%);
+
+@successText:             #468847;
+@successBackground:       #dff0d8;
+@successBorder:           darken(spin(@successBackground, -10), 5%);
+
+@infoText:                #3a87ad;
+@infoBackground:          #d9edf7;
+@infoBorder:              darken(spin(@infoBackground, -10), 7%);
+
+
+
+// GRID
+// --------------------------------------------------
+
+// Default 940px grid
+@gridColumns:             11;
+@gridColumnWidth:         60px;
+@gridGutterWidth:         20px;
+@gridRowWidth:            (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
+
+// Fluid grid
+@fluidGridColumnWidth:    6.382978723%;
+@fluidGridGutterWidth:    2.127659574%;
+
+/*@media (min-width: 1200px) {
+
+  // Fixed grid
+  #gridSystem > .generate(11, 60px, 15px);
+
+  // Fluid grid
+  #fluidGridSystem > .generate(11, 6.382978723%, 2.127659574%);
+
+  // Input grid
+  #inputGridSystem > .generate(11, 60px, 20px);
+}*/
+
+
+.topbar-home {
+	height: 400px;
+	margin-top: -60px;
+	margin-bottom: 20px;
+	padding-top: 50px;
+
+	background: url(/assets/top_background.png) center #23346b;
+	
+	p.head {
+	  float: left;
+	  width: 100%;
+		padding-left: 10px;
+	  text-align: left;
+	  color: #e0e0e0;
+	  text-shadow: 1px 1px 3px #000000;
+	  font-size: 18px;
+	  line-height: 30px;
+	}
+}
+
+
+@media (max-width: 979px) {
+	.topbar-home {
+		padding-top: 70px;
+		background: url(/assets/top_background.png) no-repeat -400px #23346b;
+	
+		#home_menu_wrap {
+			margin-left: 20px;
+		}
+		
+	}
+	
+	
+}
+
+
+
+@media (max-width: 760px) {
+	.topbar-home {
+		height: 635px;
+		background: #23346b;
+		margin-left: -20px;
+		margin-right: -20px;
+		padding-right: 20px;
+		padding-left: 20px;
+		padding-top: 70px;
+		background: #23346b;
+		#home_menu_wrap {
+			margin-left: 0px;
+			margin-bottom: 20px;
+		}
+		#MainTitle{
+			margin-bottom: 0px;
+			h1{
+			}
+		}
+		
+		#main_form{ 
+			div.controls {
+				height: 25px;
+				float: none;
+				margin-bottom: 10px;
+			}
+			.actions p {
+
+				float: none;
+				margin: 3px;
+			}
+			label {
+				float: none;
+				color: #ffffff;
+			}
+		}
+		
+		
+		p.head {
+			margin-top: 20px;
+		  float: left;
+		  width: 100%;
+			padding-left: 10px;
+		  text-align: left;
+		  color: #e0e0e0;
+		  text-shadow: 1px 1px 3px #000000;
+		  font-size: 16px;
+		  line-height: 26px;
+		}
+	}
+}
+
+#home_menu_wrap {
+	margin-top: 20px;
+	a{
+		color: #FFFFFF;
+	  font-size: 14px;
+	}
+	a:hover{
+		color: @linkColor;
+	}
+}
+	
+.nav-list .divider {
+	height: 1px;
+	margin: 8px 1px;
+	overflow: hidden;
+	background-color: #E5E5E5;
+	border-bottom: 1px solid white;
+}

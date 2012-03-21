@@ -9,19 +9,19 @@ ActiveAdmin.register Notification, :as => "Correo" do
 
        case notification.recipients
        when 1
-         User.all.each do |user|
+         current_admin_user.center.users.each do |user|
            UserMailer.notification_send(user,notification).deliver
          end  
        when 2
-         User.registrado.all.each do |user|
+         current_admin_user.center.users.registrado.each do |user|
            UserMailer.notification_send(user,notification).deliver
          end
        when 3
-         User.embajador.all.each do |user|
+         current_admin_user.center.users.embajador.each do |user|
            UserMailer.notification_send(user,notification).deliver
          end
        when 4
-         User.staff.all.each do |user|
+         current_admin_user.center.users.staff.each do |user|
            UserMailer.notification_send(user,notification).deliver
          end       
        else notice="No se envio ningun email"
@@ -62,7 +62,7 @@ ActiveAdmin.register Notification, :as => "Correo" do
       f.input :name  
       f.input :title
       f.input :recipients, :as => :select, :collection => { "Todos" => 1, "Registrados" => 2, "Embajadores" => 3, "Staff" => 4 }
-      f.input :content, :input_html => {:class => 'editor'}
+      f.input :content, :as => :ckeditor
     end
     f.buttons
   end

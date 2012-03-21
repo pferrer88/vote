@@ -1,5 +1,6 @@
 class AdminUser < ActiveRecord::Base
   belongs_to :center
+  belongs_to :user
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
@@ -7,14 +8,14 @@ class AdminUser < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :center_id, :super
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :center_id, :super, :user_id
   validates_presence_of :center_id
   
   def users
     if self.super
       User
     else
-      center.users
+      center.users.includes(:invitations)
     end  
   end
   

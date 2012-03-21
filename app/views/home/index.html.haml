@@ -1,0 +1,12 @@
+
+- if !user_signed_in?
+	-title "Embajadores Del Voto - Vota fuera de Venezuela"
+	= render :partial => "steps"
+	= render :partial => "thermometer"
+	= render :partial => "video"
+	= render :partial => "social"
+- else
+	-title "Embajadores Del Voto"
+	= render :partial => "invites"
+
+

@@ -1,0 +1,34 @@
+	<h5>Mis invitados</h5>
+	<table class="table table-striped table-bordered table-condensed">
+		<tr>
+			<th>Nombre</th>
+			<th>Email</th>
+			<th>Status</th>
+		</tr>
+		<% @invites.each do |invite| %> 
+			<tr>
+				<td><%= invite.name %> <%= invite.lastName %></td>
+				<td><%= invite.email %></td>
+				<td>
+					<% if invite.comfirmed %>
+					
+						<% if invite.embajador %>
+							Embajador
+						<% else %>
+							Confirmado
+						<% end %>
+						
+					<% else%>
+					
+						<% if invite.city == nil %>
+							Invitado <%= link_to(' Reenviar', user_invitation_path(:user => {:name => invite.name, :lastName => invite.lastName, :email => invite.email }), :method => "post") %>
+						<% else%>
+							Registrado
+						<% end %>
+						
+					<% end %>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+	<%= paginate @invites, :param_name => "invite_page" %>

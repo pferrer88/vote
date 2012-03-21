@@ -1,4 +1,7 @@
 Voto::Application.routes.draw do
+  
+
+
   resources :signatures
   
 
@@ -12,7 +15,7 @@ Voto::Application.routes.draw do
   get "information/index"
 
   get "about/index"
-
+  
   resources :states
 
   resources :products
@@ -21,13 +24,25 @@ Voto::Application.routes.draw do
 
   root :to => "home#index"
 
-  devise_for :users, :controllers => { :invitations => 'users/invitations' }
+  devise_for :users, :controllers => { :invitations => 'users/invitations', :omniauth_callbacks => "users/omniauth_callbacks" }, :skip => [:sessions]
+  
+  as :user do
+    get 'login' => 'devise/sessions#new', :as => :new_user_session
+    post 'login' => 'devise/sessions#create', :as => :user_session
+    delete 'salir' => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
+  
   
   resources :users, :only => [:show,:update] do
     get 'red', :on => :member
   end
   
   match 'products/:id/purchase' => 'products#buy', :as => :comprar
+  
+  
+  mount Forem::Engine, :at => "/foros"
+  
+  mount Ckeditor::Engine => '/ckeditor'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

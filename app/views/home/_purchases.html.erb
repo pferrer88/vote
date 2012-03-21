@@ -1,0 +1,18 @@
+<h5>Mis compras</h5>
+<table id="invite_table" class="condensed-table zebra-striped bordered-table">
+	<tr>
+		<th>Producto</th>
+		<th>Cantidad</th>
+		<th>Precio</th>
+		<th>Status</th>
+	</tr>
+	<% @exchanges.each do |exchange| %> 
+		<tr>
+			<td><%= exchange.product.name if exchange.product %></td>
+			<td><%= exchange.quantity %></td>
+			<td><%= exchange.points %></td>
+			<td><%= exchange.status %></td>
+		</tr>
+	<% end %>
+</table>
+<%= paginate @exchanges, :remote => true, :param_name => "exchange_page" %>

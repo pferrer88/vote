@@ -1,0 +1,19 @@
+.row
+	.span11
+		#thermo_wrapper
+			#thermometer_container
+				%table
+					%tr#amarillo
+						%td
+							= @registered_count
+							Registrados
+					%tr#azul
+						%td
+							= @embajador_count
+							Embajadores
+					%tr#rojo
+						%td 2000 (Meta Octubre)
+				.bandera
+					%em#inv{:style => {:width => (@registered_count/2000.0)*100.0   }}
+					%em#comf{:style => {:width => (@embajador_count/2000.0)*100.0}}
+					%em#emb{:style => {:width => "100%"  }}

@@ -1,0 +1,23 @@
+- if user_signed_in?
+	Hola
+	= current_user.name if  current_user.name
+	, 
+	= link_to "Quiere Salir?", main_app.destroy_user_session_path, :method => 'delete'
+- else
+	.row
+		#main_form.span4
+			= simple_form_for(User.new, :as => :user, :url => session_path(:user)) do |f|
+				= f.input :email, :required => true, :autofocus => true,:placeholder => "Email", :label => false
+				= f.input :password, :required => true, :label => false, :wrapper => :append do
+					= f.input_field :password, :required => true, :placeholder => "Clave", :class =>"input-medium"
+					= f.button :submit, "Entrar", :class =>"btn btn-warning login_button"
+				= f.input :remember_me, :as => :boolean if devise_mapping.rememberable?				
+			.row
+				.actions.span4
+					%p
+						= link_to "Ingresa con Facebook", user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-large", :data => {:loading_text => "Ingresando..."}
+					%p	
+						/= link_to "Registrate", main_app.new_user_registration_path, :class => "btn btn-danger btn-large"
+						%a.btn.btn-danger.btn-large{:href => "#registrar", :data => {:toggle => "modal"}} Registrate
+
+/ , :input_html => { :class => 'input-large' }       , :html => { :class => '' }

@@ -13,12 +13,51 @@
 //= require best_in_place
 //= require jquery.pjax
 //= require twitter/bootstrap
-//= require tinymce-jquery
+//= require_self
 
 $(document).ready(function() {
 	// $('a').pjax('#main');
-	$(".alert-message").alert();
-	$( ".datepicker" ).datepicker();
+	// $(".alert-message").alert();
+	// $( ".datepicker" ).datepicker();
+	// $("#user_new").validate();
+	$("#user_new").validate({
+			
+				messages: {
+					'user[name]': {
+						required: '*requerido*'
+					},
+					'user[lastName]': {
+						required: '*requerido*'
+					},
+					'user[email]': {
+						required: '*requerido*',
+						email: 'Email no bueno'
+					},
+					'user[city]': {
+						required: '*requerido*'
+					},
+					'user[state_id]': {
+						required: '*requerido*'
+					},
+					'user[password]': {
+						required: '*requerido*',
+						minlength: 'Minimo 6'
+					},
+					'user[password_confirmation]': {
+						required: '*requerido*',
+						minlength: 'Minimo 6'
+					}
+				},
+		
+				rules: {
+								'user[password]': {
+									required:true,
+									minlength:6
+								}
+					}
+		
+				});
 });
+
 
 

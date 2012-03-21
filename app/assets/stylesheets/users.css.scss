@@ -19,7 +19,6 @@ div.l1 {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-  background-color: #f2f2f2;
   border: 1px solid #c9c9c9;
   width: 185px;
   clear: both;
@@ -27,11 +26,11 @@ div.l1 {
 
 div.l2 {
 	padding: 15px;
+	float: left;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
   border: 1px solid #c9c9c9;
-  float: right;
   margin-right: 0;
   margin-left: 15px;
   width: 375px;

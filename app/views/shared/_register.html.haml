@@ -1,0 +1,25 @@
+.intro
+	= link_to "Registrate con Facebook", user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-large facebook_btn", :data => {:loading_text => "Ingresando..."}
+	Ya tienes cuenta? 
+	= link_to "Ingresa", main_app.new_user_session_path
+%hr
+= simple_form_for(User.new, :as => :user, :url => registration_path(:user), :html => { :class => 'form-horizontal', :novalidate => false }) do |f|
+	- if devise_error_messages!
+		.alert.alert-error.fade.in
+			= devise_error_messages!
+	
+	.inputs
+		= f.input :name, :required => true, :autofocus => true, :input_html => { :class => 'span2' }
+		= f.input :lastName, :required => true, :input_html => { :class => 'span2' }
+		/= f.input :bday, :as => :date, :start_year => Date.today.year - 90, :end_year => Date.today.year - 12, :include_blank => true,	:order => [:month, :day, :year], :input_html => { :class => 'inline' }
+		= f.association :state, :required => true
+		= f.input :city, :required => true, :input_html => { :class => 'span2' }
+		/= f.input :zip, :as => :string, :input_html => { :class => 'span2' }
+		/= f.input :phone, :as => :string, :input_html => { :class => 'span2'}
+		= f.input :email, :required => true, :input_html => { :class => 'span4' }
+		= f.input :password, :required => true, :input_html => { :class => 'span2 required' }
+		= f.input :password_confirmation, :required => true, :input_html => { :class => 'span2 required' }
+	.form-actions
+		= f.button :submit, "Registrate", :class =>"btn btn-large btn-success"
+		/%a.btn{:data => {:dismiss => "modal"}} Cerrar
+

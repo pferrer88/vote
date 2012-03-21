@@ -43,16 +43,27 @@ gem "guard-livereload", ">= 0.3.0", :group => :development
 gem "guard-rspec", ">= 0.4.3", :group => :development
 gem "guard-cucumber", ">= 0.6.1", :group => :development
 
-gem "devise", ">= 1.5.0"
-gem 'devise_invitable', '~> 0.6.0'
+gem "devise", :git => "https://github.com/plataformatec/devise.git"
+gem "omniauth-facebook"
+gem "fb_graph"
+gem 'devise_invitable', '~> 1.0.0'
 gem 'best_in_place'
-gem 'activeadmin', :git => 'https://github.com/gregbell/active_admin.git'
-gem "twitter-bootstrap-rails"
-gem 'rack-pjax'
-gem 'simple_form'
 
-gem "rmagick"
+gem 'forem', :git => "git://github.com/radar/forem.git"
+# gem 'forem-theme-twist', :git => "git@github.com:pferrer88/forem-theme-twist.git"
+# gem 'forem-theme-orange', :git => "git://github.com/radar/forem-theme-orange.git"
+
+gem 'activeadmin', :git => 'https://github.com/gregbell/active_admin.git'
+# gem "rmagick"
+gem "mini_magick"
+gem "ckeditor", "3.7.0.rc3"
 gem "carrierwave"
 
+gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'haml'
+gem 'simple_form', :git => 'https://github.com/plataformatec/simple_form.git'
+gem 'country_select'
+
+gem 'rack-pjax'
 gem "aws-ses", :require => 'aws/ses'
-gem 'tinymce-rails'
+
