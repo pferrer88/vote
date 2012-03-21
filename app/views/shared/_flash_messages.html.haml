@@ -4,7 +4,7 @@
 			%a.close{:href => "#", :data => {:dismiss => "alert"}} ×
 			%p
 				Porfavor completa tu registro ingresando tu estado y ciudad donde votas 
-				=link_to "aqui", current_user
+				=link_to "aqui", main_app.user_path(current_user)
 		
 - flash.each do |type, message|
 	%div.alert.fade.in{ :class => twitterized_type(type) }

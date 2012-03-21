@@ -168,7 +168,7 @@
 						#invite_form.well
 							%h4 Invita a un amigo
 							%hr
-							= simple_form_for(resource, :as => resource_name, :url => main_app.invitation_path(resource_name), :html => {:method => :post, :class => "form-inline"}) do |f|
+							= simple_form_for(resource, :as => resource_name, :url => main_app.user_invitation_path(resource_name), :html => {:method => :post, :class => "form-inline"}) do |f|
 								= f.input :name, :required => true, :autofocus => true, :input_html => {:class => "input-medium"}
 								= f.input :lastName, :required => true, :input_html => {:class => "input-medium"}
 								= f.input :email, :required => true, :input_html => {:class => "input-medium"}
