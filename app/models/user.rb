@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :lastName, :email, :password, :password_confirmation, :remember_me, :lastName, :comfirmed, :state_id,
-                  :phone, :city, :cedula, :points, :bday, :esta_inscrito, :tiene_intencion, :tiene_cedula, :zip,:assigned_to_id, :staff, :fb_token, :fb_image
+                  :phone, :city, :cedula, :points, :bday, :esta_inscrito, :tiene_intencion, :tiene_cedula, :zip,:assigned_to_id, 
+                  :staff, :fb_token, :fb_image, :forem_admin
   belongs_to :state
   belongs_to :assigned_to, :polymorphic => true
   has_many :exchanges

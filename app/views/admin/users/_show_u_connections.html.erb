@@ -1,6 +1,7 @@
 <p>Puntos: <%= user.points %></p>
 <p>Invitado Por: <%= link_to  user.invited_by.name + " " + user.invited_by.lastName, admin_user_path(user.invited_by) if user.invited_by %></p>
 <p>Es Embajador? <%= user.embajador %></p>
+<p>Administrador de Foro? <%= user.forem_admin %></p>
 <p>
 	Gente Invitada:
 	<% @ass2 = User.where(:invited_by_id => user.id)%>
