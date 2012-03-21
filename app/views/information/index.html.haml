@@ -1,0 +1,5 @@
+- title "Informacion Electoral"
+- if @page.pre_content != nil
+	.hero-unit
+		= raw @page.pre_content
+= raw @page.content unless @page.content == nil

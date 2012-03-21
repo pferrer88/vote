@@ -1,6 +1,7 @@
 -title "¿Quienes Somos?"
-.hero-unit
-	= raw @page.pre_content unless @page.pre_content == nil
+- if @page.pre_content != nil
+	.hero-unit
+		= raw @page.pre_content
 = raw @page.content unless @page.content == nil
 
  
