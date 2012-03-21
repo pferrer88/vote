@@ -68,26 +68,28 @@ class User < ActiveRecord::Base
   
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     puts "ALL:"
-    puts access_token
+    # puts access_token
     puts "Data:"
     data = access_token.extra.raw_info
-    puts data
+    # puts data
     puts "Token:"
-    puts access_token.credentials.token
+    # puts access_token.credentials.token
     token = access_token.credentials.token
     puts "Image:"
-    puts access_token.info.image
+    # puts access_token.info.image
     image = access_token.info.image
     if user = User.where(:email => data.email).first
-      user
+      user.fb_image = image unless user.fb_image != nil
+      u.fb_token = token unless token == nil
+      user.save!
     else # Create a user with a stub password.
-      
       user = FbGraph::User.me(token).fetch
       location = user.location.name.split(%r{,\s*})
       city = location[0]
       region = State.find_by_name(location[1]).first unless State.find_by_name(location[1]) == nil
       u = User.new(:email => data.email, :password => Devise.friendly_token[0,20], :fb_token => token, :name => data.first_name, :lastName => data.last_name) 
       u.fb_image = image unless image == nil
+      u.fb_token = token unless token == nil
       u.city = city unless city == nil
       u.state = region unless region == nil
       u.confirm!
