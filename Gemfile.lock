@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/radar/forem-theme-orange.git
+  revision: 8e78cb15c986d8d7b4322fb92f5fc87d5ca670ad
+  specs:
+    forem-theme-orange (0.0.1)
+
+GIT
   remote: git://github.com/radar/forem.git
   revision: cd49c2926d3a7e2bf2b5b556f956584d4426a3d4
   specs:
@@ -358,6 +364,7 @@ DEPENDENCIES
   factory_girl_rails
   fb_graph
   forem!
+  forem-theme-orange!
   growl
   guard (>= 0.6.2)
   guard-bundler (>= 0.1.3)

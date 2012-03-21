@@ -56,7 +56,8 @@
 							.span7
 								#home_menu_wrap
 									%ul.nav.nav-pills
-										%li
+
+										%li{:class => ("active" if params[:controller] == "home")}
 											= link_to 'Home', main_app.root_path, :class => "homelink"
 										%li
 											= link_to '¿Quienes Somos?', main_app.about_index_path, :class => "aboutlink"
