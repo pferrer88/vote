@@ -15,7 +15,7 @@
 			.row
 				.actions.span4
 					%p
-						= link_to "Ingresa con Facebook", user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-large", :data => {:loading_text => "Ingresando..."}
+						= link_to "Ingresa con Facebook", "http://www.embajadoresdelvoto.org/users/auth/facebook", :class => "btn btn-primary btn-large", :data => {:loading_text => "Ingresando..."}
 					%p	
 						/= link_to "Registrate", main_app.new_user_registration_path, :class => "btn btn-danger btn-large"
 						%a.btn.btn-danger.btn-large{:href => "#registrar", :data => {:toggle => "modal"}} Registrate
