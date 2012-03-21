@@ -87,7 +87,7 @@ class User < ActiveRecord::Base
       user = FbGraph::User.me(token).fetch
       location = user.location.name.split(%r{,\s*})
       city = location[0]
-      region = State.find_by_name(location[1]).first unless State.find_by_name(location[1]) == nil
+      region = State.find_by_name(location[1]) unless State.find_by_name(location[1]) == nil
       u = User.new(:email => data.email, :password => Devise.friendly_token[0,20], :fb_token => token, :name => data.first_name, :lastName => data.last_name) 
       u.fb_image = image unless image == nil
       u.fb_token = token unless token == nil

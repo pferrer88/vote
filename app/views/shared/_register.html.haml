@@ -1,5 +1,5 @@
 .intro
-	= link_to "Registrate con Facebook", user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-large facebook_btn", :data => {:loading_text => "Ingresando..."}
+	= link_to "Registrate con Facebook", "http://www.embajadoresdelvoto.org/users/auth/facebook", :class => "btn btn-primary btn-large facebook_btn", :data => {:loading_text => "Ingresando..."}
 	Ya tienes cuenta? 
 	= link_to "Ingresa", main_app.new_user_session_path
 %hr
