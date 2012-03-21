@@ -84,6 +84,12 @@ class User < ActiveRecord::Base
       user.fb_token = token unless token == nil
       user.save!
       user
+    # elsif current_user != nil
+    #   if current_user.name == data.first_name
+    #     current_user.fb_image = image unless user.fb_image != nil
+    #     current_user.fb_token = token unless token == nil
+    #     current_user.save!
+    #     current_user
     else # Create a user with a stub password.
       user = FbGraph::User.me(token).fetch
       location = user.location.name.split(%r{,\s*})

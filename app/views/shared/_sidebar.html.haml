@@ -1,0 +1,54 @@
+.well.sidebar-nav
+	%ul.nav.nav-list
+		%li.nav-header
+			= image_tag current_user.fb_image unless current_user.fb_image==nil
+			/ %p.profile_info
+			= link_to current_user.name + " " + current_user.lastName, main_app.user_path(current_user)
+			%b
+			= current_user.city 
+			, 
+			= current_user.state.short if current_user.state
+		/ %span.badge.badge-success.pull-right
+		/ 	= current_user.points
+			
+		%li.divider
+		%li.active
+			= link_to main_app.root_path do
+				%i.icon-home 
+				Inicio
+		%li
+			= link_to main_app.user_path(current_user) do
+				%i.icon-user
+				Mis Datos
+		%li
+			= link_to main_app.red_user_path(current_user) do
+				%i.icon-heart
+				Mis Registrados
+		%li
+			= link_to main_app.products_path do
+				%i.icon-shopping-cart
+				Tienda
+		
+		%li
+			= link_to forem.root_path do
+				%i.icon-comment
+				Foro
+			
+		
+		- if current_user.forem_admin								
+			%li.nav-header
+				Settings
+		- if current_user.forem_admin		
+			%li
+				= link_to "Foro", forem.admin_root_url
+			
+/ /.well
+#invite_form.well
+	%h4 Invita a un amigo
+	%hr
+	= simple_form_for(resource, :as => resource_name, :url => main_app.user_invitation_path(resource_name), :html => {:method => :post, :class => "form-inline"}) do |f|
+		= f.input :name, :required => true, :autofocus => true, :input_html => {:class => "input-medium"}
+		= f.input :lastName, :required => true, :input_html => {:class => "input-medium"}
+		= f.input :email, :required => true, :input_html => {:class => "input-medium"}
+		.form-actions
+			= f.button :submit, "Invitar", :class =>"btn btn-primary"

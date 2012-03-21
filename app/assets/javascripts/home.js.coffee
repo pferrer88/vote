@@ -15,7 +15,9 @@
 
 jQuery ->
 
-	$('#carta').modal('show')
+	$('#carta').modal('show');
+	$('#page_notice').modal('show');
+	
 
 	
 

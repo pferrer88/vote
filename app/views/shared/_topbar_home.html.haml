@@ -1,0 +1,34 @@
+.topbar-home
+	.fill
+		.container	
+			.row
+				.span4
+					#MainTitle
+						%h1
+							%span#logo 
+								Embajadores 
+								%b Del Voto
+				.span7
+					#home_menu_wrap
+						%ul.nav.nav-pills
+
+							%li{:class => ("active" if params[:controller] == "home")}
+								= link_to 'Home', main_app.root_path, :class => "homelink"
+							%li{:class => ("active" if params[:controller] == "about")}
+								= link_to '¿Quienes Somos?', main_app.about_index_path, :class => "aboutlink"
+							%li{:class => ("active" if params[:controller] == "information")}
+								= link_to 'Informacion Electoral', main_app.information_index_path, :class => "informationlink"
+							%li{:class => ("active" if params[:controller] == "contact")}
+								= link_to 'Contacto', main_app.contact_index_path, :class => "contactlink"		
+							%li.dropdown{:class => ("active" if params[:controller] == "forem/forums")}
+								= link_to "Foro", forem.root_path, :class => "forumlink"
+			.row
+				.span4
+					= render 'shared/session'
+				.span7
+					%p.head
+						%strong Somos
+						un grupo de
+						%strong jóvenes venezolanos
+						de distintas organizaciones (Voto Joven, MUD, Venmundo, etc.) ubicados en el área de NY. Juntos formamos un movimiento llamado “Embajadores del Voto”, que
+						%strong busca promover el voto en el exterior

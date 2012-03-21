@@ -1,0 +1,24 @@
+.navbar.navbar-fixed-top
+				.navbar-inner
+					.container-fluid
+						%a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+							%span.icon-bar
+							%span.icon-bar
+							%span.icon-bar
+						%a.brand{:href => "/"} 
+							Embajadores Del Voto
+						.nav-collapse
+							%ul.nav
+								%li
+									= link_to 'Home', main_app.root_path
+								%li
+									= link_to '¿Quienes Somos?', main_app.about_index_path
+								%li
+									= link_to 'Informacion Electoral', main_app.information_index_path
+								%li
+									= link_to 'Contacto', main_app.contact_index_path		
+								%li
+									= link_to "Foro", forem.root_path
+												
+							%p.navbar-text.pull-right
+								= render :partial => "shared/session"

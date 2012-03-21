@@ -3,7 +3,7 @@
 	Ya tienes cuenta? 
 	= link_to "Ingresa", main_app.new_user_session_path
 %hr
-= simple_form_for(User.new, :as => :user, :url => registration_path(:user), :html => { :class => 'form-horizontal', :novalidate => false }) do |f|
+= simple_form_for(User.new, :as => :user, :url => registration_path(:user), :html => { :class => 'form-horizontal validate', :novalidate => false }) do |f|
 	- if devise_error_messages!
 		.alert.alert-error.fade.in
 			= devise_error_messages!

@@ -43,149 +43,25 @@
 			}(document, 'script', 'facebook-jssdk'));
 
 		- if !user_signed_in?
-			.topbar-home
-				.fill
-					.container	
-						.row
-							.span4
-								#MainTitle
-									%h1
-										%span#logo 
-											Embajadores 
-											%b Del Voto
-							.span7
-								#home_menu_wrap
-									%ul.nav.nav-pills
-
-										%li{:class => ("active" if params[:controller] == "home")}
-											= link_to 'Home', main_app.root_path, :class => "homelink"
-										%li
-											= link_to '¿Quienes Somos?', main_app.about_index_path, :class => "aboutlink"
-										%li
-											= link_to 'Informacion Electoral', main_app.information_index_path, :class => "informationlink"
-										%li
-											= link_to 'Contacto', main_app.contact_index_path, :class => "contactlink"		
-										%li.dropdown
-											= link_to "Foro", forem.root_path, :class => "forumlink"
-						.row
-							.span4
-								= render 'shared/session'
-							.span7
-								%p.head
-									%strong Somos
-									un grupo de
-									%strong jóvenes venezolanos
-									de distintas organizaciones (Voto Joven, MUD, Venmundo, etc.) ubicados en el área de NY. Juntos formamos un movimiento llamado “Embajadores del Voto”, que
-									%strong busca promover el voto en el exterior
-
+			= render :partial => "shared/topbar_home"
 			.container
 				.row
 					.span11
 						= render :partial => "shared/flash_messages", :locals => {:flash => flash}
 						= yield
-					/ span
-				/ row
-				.row
-					%hr.span11
-				.row
-					%footer.span11
-						%p &copy; Embajadores del Voto es una iniciativa de Venezolanos en el Exterior (Venex-NY) Nueva York y Voto Joven 2012
-
+					= render :partial => "shared/footer"
+					
 		- else
-			.navbar.navbar-fixed-top
-				.navbar-inner
-					.container-fluid
-						%a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
-							%span.icon-bar
-							%span.icon-bar
-							%span.icon-bar
-						%a.brand{:href => "/"} 
-							Embajadores Del Voto
-						.nav-collapse
-							%ul.nav
-								%li
-									= link_to 'Home', main_app.root_path
-								%li
-									= link_to '¿Quienes Somos?', main_app.about_index_path
-								%li
-									= link_to 'Informacion Electoral', main_app.information_index_path
-								%li
-									= link_to 'Contacto', main_app.contact_index_path		
-								%li
-									= link_to "Foro", forem.root_path
-												
-							%p.navbar-text.pull-right
-								= render :partial => "shared/session"
+			= render :partial => "shared/top_navbar"
 			.container-fluid
 				.row-fluid
-			
 					.span3
-						.well.sidebar-nav
-							%ul.nav.nav-list
-								%li.nav-header
-									= image_tag current_user.fb_image unless current_user.fb_image==nil
-									/ %p.profile_info
-									= link_to current_user.name + " " + current_user.lastName, main_app.user_path(current_user)
-									%b
-									= current_user.city 
-									, 
-									= current_user.state.short if current_user.state
-								/ %span.badge.badge-success.pull-right
-								/ 	= current_user.points
-									
-								%li.divider
-								%li.active
-									= link_to main_app.root_path do
-										%i.icon-home 
-										Inicio
-								%li
-									= link_to main_app.user_path(current_user) do
-										%i.icon-user
-										Mis Datos
-								%li
-									= link_to main_app.red_user_path(current_user) do
-										%i.icon-heart
-										Mis Registrados
-								%li
-									= link_to main_app.products_path do
-										%i.icon-shopping-cart
-										Tienda
-								
-								%li
-									= link_to forem.root_path do
-										%i.icon-comment
-										Foro
-									
-								
-								- if current_user.forem_admin								
-									%li.nav-header
-										Settings
-								- if current_user.forem_admin		
-									%li
-										= link_to "Foro", forem.admin_root_url
-									
-						/ /.well
-						#invite_form.well
-							%h4 Invita a un amigo
-							%hr
-							= simple_form_for(resource, :as => resource_name, :url => main_app.user_invitation_path(resource_name), :html => {:method => :post, :class => "form-inline"}) do |f|
-								= f.input :name, :required => true, :autofocus => true, :input_html => {:class => "input-medium"}
-								= f.input :lastName, :required => true, :input_html => {:class => "input-medium"}
-								= f.input :email, :required => true, :input_html => {:class => "input-medium"}
-								.form-actions
-									= f.button :submit, "Invitar", :class =>"btn btn-primary"
-					/ /span3
+						= render :partial => "shared/sidebar"
 					.span9
 						= render :partial => "shared/flash_messages", :locals => {:flash => flash}
 						= yield
-					/ span
-				/ row
-				.row
-					%hr
-				.row
-					%footer.span11
-						%p &copy; Embajadores del Voto es una iniciativa de Venezolanos en el Exterior (Venex-NY) Nueva York y Voto Joven 2012
-
+				= render :partial => "shared/footer"
+		
 		-if current_user == nil
 			#registrar.modal.hide.fade
 				.modal-header
@@ -193,4 +69,11 @@
 					%h3 Registrate
 				.modal-body
 					= render :partial => "shared/register"
-					
+		-if @page
+			-if @page.modal != ""
+				#page_notice.modal.fade
+					.modal-header
+						%a.btn.close{:data => {:dismiss => "modal"}} x
+						%h3= @page.title
+					.modal-body
+						= raw @page.modal

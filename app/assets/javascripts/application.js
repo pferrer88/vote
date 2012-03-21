@@ -20,7 +20,7 @@ $(document).ready(function() {
 	// $(".alert-message").alert();
 	// $( ".datepicker" ).datepicker();
 	// $("#user_new").validate();
-	$("#user_new").validate({
+	$(".validate").validate({
 			
 				messages: {
 					'user[name]': {
