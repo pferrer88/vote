@@ -1,13 +1,4 @@
 GIT
-  remote: git://github.com/radar/forem-redcarpet
-  revision: 9d24330ef055b2481cbd25f088c3e54e663f8c01
-  specs:
-    forem-redcarpet (1.0.0)
-      nokogiri
-      pygments.rb (= 0.2.4)
-      redcarpet (= 2.0.1)
-
-GIT
   remote: git://github.com/radar/forem.git
   revision: cd49c2926d3a7e2bf2b5b556f956584d4426a3d4
   specs:
@@ -17,12 +8,6 @@ GIT
       rails (~> 3.1)
       simple_form
       workflow (= 0.8.0)
-
-GIT
-  remote: git@github.com:pferrer88/forem-theme-twist.git
-  revision: 9d0c482335449ac15563c16937d9a528c5807935
-  specs:
-    forem-theme-twist (0.0.1)
 
 GIT
   remote: http://github.com/seyhunak/twitter-bootstrap-rails.git
@@ -176,6 +161,9 @@ GEM
       rack-oauth2 (>= 0.14.4)
       tzinfo
     ffi (1.0.11)
+    forem-redcarpet (1.0.0)
+      pygments.rb (= 0.2.4)
+      redcarpet (= 2.0.1)
     formtastic (2.1.1)
       actionpack (~> 3.0)
     gherkin (2.7.4)
@@ -370,8 +358,6 @@ DEPENDENCIES
   factory_girl_rails
   fb_graph
   forem!
-  forem-redcarpet!
-  forem-theme-twist!
   growl
   guard (>= 0.6.2)
   guard-bundler (>= 0.1.3)
