@@ -5,7 +5,7 @@ class InformationController < ApplicationController
       if p = current_user.center.pages.published.where(:title =>"Informacion Electoral").first
         @page = p
       else
-        @page = Page.published.main.published.where(:title =>"Informacion Electoral").first
+        @page = Page.published.main.where(:title =>"Informacion Electoral").first
       end
     else
       @page = Page.published.main.where(:title =>"Informacion Electoral").first

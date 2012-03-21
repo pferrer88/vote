@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
   scope :staff, where(:staff => true)
   scope :por_confirmar, where("city IS NOT NULL and comfirmed = 'f'")
   scope :registrado, where("city IS NOT NULL")
+  scope :facebook, where("fb_token IS NOT NULL")
   scope :confirmado, where(:comfirmed => true)
   scope :embajador, where(:embajador => true)
 

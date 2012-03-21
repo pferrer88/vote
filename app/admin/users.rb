@@ -10,7 +10,7 @@ ActiveAdmin.register User do
   scope :embajador
   scope :invitado
   scope :staff
-  
+  scope :facebook
   
   filter :lastName
   filter :cedula
