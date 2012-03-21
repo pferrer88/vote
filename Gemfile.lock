@@ -364,6 +364,7 @@ DEPENDENCIES
   factory_girl_rails
   fb_graph
   forem!
+  forem-redcarpet (~> 1.0.0)
   forem-theme-orange!
   growl
   guard (>= 0.6.2)
