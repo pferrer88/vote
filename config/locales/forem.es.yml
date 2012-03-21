@@ -95,7 +95,7 @@ es:
       delete: Borrar
       created: This topic has been created.
       new: Creando un nuevo topico
-      edit: Editing topic
+      edit: Editando topico
       not_created: This topic could not be created.
       deleted: Your topic has been deleted.
       cannot_delete: You cannot delete a topic you do not own.
