@@ -20,7 +20,7 @@
 								= link_to 'Informacion Electoral', main_app.information_index_path, :class => "informationlink"
 							%li{:class => ("active" if params[:controller] == "contact")}
 								= link_to 'Contacto', main_app.contact_index_path, :class => "contactlink"		
-							%li.dropdown{:class => ("active" if params[:controller] == "forem/forums")}
+							%li.dropdown
 								= link_to "Foro", forem.root_path, :class => "forumlink"
 			.row
 				.span4

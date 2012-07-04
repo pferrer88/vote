@@ -79,7 +79,7 @@ class User < ActiveRecord::Base
     token = access_token.credentials.token
     puts "Image:"
     # puts access_token.info.image
-    image = access_token.info.image
+    image = access_token.info.image unless access_token.info.image==nil
     if user = User.where(:email => data.email).first
       user.fb_image = image unless user.fb_image != nil
       user.fb_token = token unless token == nil
